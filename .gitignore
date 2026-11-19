@@ -1,0 +1,13 @@
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+node_modules/
+.next/
+*.db
+*.sqlite3
+requirements.json
+compliance_results.json
+data/uploads/
+samples/live_*.json

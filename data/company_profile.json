@@ -1,0 +1,117 @@
+{
+  "company_id": "COMP-001",
+  "name": "Syarikat Kejuruteraan Aman Sdn. Bhd.",
+  "registration_number": "201901024812 (1334141-K)",
+  "confirmed_at": "2026-11-18T09:00:00+08:00",
+  "contact": {
+    "contact_person": "Ahmad Farhan bin Ismail",
+    "email": "tender@kejuruteraanaman.com.my",
+    "phone": "+603-7982 4410",
+    "state": "Wilayah Persekutuan Kuala Lumpur"
+  },
+  "cidb": {
+    "active": true,
+    "registration_number": "0120190815-WP042188",
+    "grade": "G3",
+    "categories": [
+      "B04",
+      "M15",
+      "CE21"
+    ],
+    "valid_from": "2024-06-01",
+    "valid_until": "2027-05-31",
+    "evidence_document_id": "DOC-CIDB-001",
+    "user_confirmed": true
+  },
+  "mof": {
+    "active": true,
+    "registration_number": "357-02284190",
+    "codes": [
+      "220401",
+      "221001",
+      "210101"
+    ],
+    "valid_from": "2025-01-15",
+    "valid_until": "2028-01-14",
+    "evidence_document_id": "DOC-MOF-001",
+    "user_confirmed": true
+  },
+  "bumiputera": {
+    "status": true,
+    "valid_from": "2025-01-15",
+    "valid_until": "2028-01-14",
+    "evidence_document_id": "DOC-BUMI-001",
+    "user_confirmed": true
+  },
+  "status_flags": {
+    "ssm_active": {
+      "value": true,
+      "evidence_document_id": "DOC-SSM-001",
+      "user_confirmed": true
+    }
+  },
+  "financials": {
+    "paid_up_capital_rm": 250000,
+    "net_worth_rm": null,
+    "as_of": "2026-06-30",
+    "evidence_document_id": "DOC-PUC-001",
+    "user_confirmed": true
+  },
+  "documents": [
+    {
+      "id": "DOC-CIDB-001",
+      "document_type": "cidb_certificate",
+      "title": "Sijil Perakuan Pendaftaran Kontraktor (PPK) CIDB - Gred G3",
+      "filename": "CIDB_PPK_G3_Aman_2024_2027.pdf",
+      "storage_path": "company_docs/CIDB_PPK_G3_Aman_2024_2027.pdf",
+      "valid_from": "2024-06-01",
+      "valid_until": "2027-05-31",
+      "user_confirmed": true,
+      "notes": "Confirmed G3 with B04, M15, CE21."
+    },
+    {
+      "id": "DOC-MOF-001",
+      "document_type": "mof_certificate",
+      "title": "Sijil Akuan Pendaftaran Syarikat Kementerian Kewangan (MOF)",
+      "filename": "MOF_Certificate_Aman_2025_2028.pdf",
+      "storage_path": "company_docs/MOF_Certificate_Aman_2025_2028.pdf",
+      "valid_from": "2025-01-15",
+      "valid_until": "2028-01-14",
+      "user_confirmed": true,
+      "notes": "Includes codes 220401, 221001, 210101."
+    },
+    {
+      "id": "DOC-BUMI-001",
+      "document_type": "bumiputera_certificate",
+      "title": "Sijil Akuan Pendaftaran Syarikat Bumiputera (MOF)",
+      "filename": "MOF_Bumiputera_Aman_2025_2028.pdf",
+      "storage_path": "company_docs/MOF_Bumiputera_Aman_2025_2028.pdf",
+      "valid_from": "2025-01-15",
+      "valid_until": "2028-01-14",
+      "user_confirmed": true,
+      "notes": "Confirmed Bumiputera status."
+    },
+    {
+      "id": "DOC-SSM-001",
+      "document_type": "ssm_certificate",
+      "title": "SSM Corporate Profile & Certificate of Incorporation",
+      "filename": "SSM_Profile_Aman_2026.pdf",
+      "storage_path": "company_docs/SSM_Profile_Aman_2026.pdf",
+      "valid_from": "2019-07-12",
+      "valid_until": null,
+      "user_confirmed": true,
+      "notes": "Active Malaysian Sdn. Bhd."
+    },
+    {
+      "id": "DOC-PUC-001",
+      "document_type": "paid_up_capital_statement",
+      "title": "SSM Return of Allotment of Shares (Section 78) - Paid-up Capital RM 250,000",
+      "filename": "SSM_Section78_PaidUpCapital_Aman_2026.pdf",
+      "storage_path": "company_docs/SSM_Section78_PaidUpCapital_Aman_2026.pdf",
+      "valid_from": "2026-06-30",
+      "valid_until": null,
+      "user_confirmed": true,
+      "notes": "Confirmed paid-up capital RM 250,000 as of 30 June 2026."
+    }
+  ]
+}
