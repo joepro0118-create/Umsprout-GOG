@@ -191,7 +191,7 @@ def build_report_pdf(
             Paragraph(f"<font color='{STATUS_COLORS[result.status].hexval()}'><b>"
                       f"{STATUS_LABELS[result.status]}</b></font>", SMALL),
         ])
-    story.append(_grid(inv, [16 * mm, 11 * mm, 13 * mm, 26 * mm, 80 * mm, 24 * mm]))
+    story.append(_grid(inv, [16 * mm, 13 * mm, 13 * mm, 26 * mm, 78 * mm, 24 * mm]))
 
     sections = [
         ("matched_rule_verified", "Rule-checked matches"),

@@ -10,5 +10,7 @@ node_modules/
 requirements.json
 compliance_results.json
 data/uploads/
+data/llm_cache/
 samples/live_*.json
 samples/real/
+ui_screenshots_old.zip

@@ -1,0 +1,1850 @@
+{
+  "tender": {
+    "id": "TND-6818fd3f",
+    "title": "MBI S0175/26 - Selenggaraan Pokok Teduhan",
+    "filename": "MBI_462325MEJA.pdf",
+    "status": "completed",
+    "error": null,
+    "created_at": "2026-11-20T02:48:38.645260+00:00",
+    "completed_at": "2026-11-20T02:50:08.691108+00:00"
+  },
+  "extraction": {
+    "tender_file": "C:\\Users\\Joe\\OneDrive\\Desktop\\Umsprout\\data\\uploads\\tenders\\TND-6818fd3f\\MBI_462325MEJA.pdf",
+    "extracted_at": "2026-11-20T02:50:08.690531+00:00",
+    "model_used": "gemini-3.1-flash-lite",
+    "page_count": 29,
+    "low_quality_pages": [
+      20
+    ],
+    "pages_info": [
+      {
+        "page_number": 1,
+        "char_count": 936,
+        "image_count": 1,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 2,
+        "char_count": 500,
+        "image_count": 5,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 3,
+        "char_count": 2364,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 4,
+        "char_count": 2345,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 5,
+        "char_count": 2486,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 6,
+        "char_count": 2425,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 7,
+        "char_count": 122,
+        "image_count": 3,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 8,
+        "char_count": 108,
+        "image_count": 1,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 9,
+        "char_count": 355,
+        "image_count": 4,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 10,
+        "char_count": 2295,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 11,
+        "char_count": 1358,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 12,
+        "char_count": 1807,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 13,
+        "char_count": 2617,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 14,
+        "char_count": 2823,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 15,
+        "char_count": 1479,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 16,
+        "char_count": 665,
+        "image_count": 2,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 17,
+        "char_count": 3997,
+        "image_count": 4,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 18,
+        "char_count": 3195,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 19,
+        "char_count": 2483,
+        "image_count": 5,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 20,
+        "char_count": 37,
+        "image_count": 2,
+        "extraction_method": "ocr_unavailable",
+        "low_quality": true,
+        "quality_notes": "Scanned/low-text page (37 chars); Gemini OCR failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Thinking level MINIMAL is not supported for this model. Please retry with other thinking level.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "page_number": 21,
+        "char_count": 691,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 22,
+        "char_count": 2636,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 23,
+        "char_count": 217,
+        "image_count": 2,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 24,
+        "char_count": 546,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 25,
+        "char_count": 1762,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 26,
+        "char_count": 1441,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 27,
+        "char_count": 1241,
+        "image_count": 2,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 28,
+        "char_count": 1560,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      },
+      {
+        "page_number": 29,
+        "char_count": 1491,
+        "image_count": 3,
+        "extraction_method": "ocr_gemini_vision",
+        "low_quality": false,
+        "quality_notes": "Gemini Vision OCR fallback applied (gemini-3.1-flash-lite)"
+      }
+    ],
+    "summary": {
+      "total_requirements": 29,
+      "tier_a_mandatory_count": 28,
+      "tier_b_disqualifying_count": 26,
+      "informational_count": 0,
+      "review_required_count": 25,
+      "initial_pass_count": 11,
+      "coverage_pass_added_count": 17,
+      "uncited_or_flagged_count": 1,
+      "low_quality_page_count": 1
+    },
+    "requirements": [
+      {
+        "id": "REQ-001",
+        "original_text": "The Contractor shall visit the site before tendering",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "site_briefing",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "site_visit",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "A mandatory site visit is required before submitting the tender to understand the scope and conditions.",
+        "source_page": 17,
+        "source_excerpt": "NOTE : The Contractor shall visit the site before tendering",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-002",
+        "original_text": "Salinan Sijil Akuan Pendaftaran Dari Kementerian Kewangan (Bekalan / Perkhidmatan)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mof_registration",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "mof_active",
+          "field": "mof_registration",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "A valid Ministry of Finance (MOF) registration certificate for Supplies/Services is mandatory.",
+        "source_page": 4,
+        "source_excerpt": "ii. Salinan Sijil Akuan Pendaftaran Dari Kementerian Kewangan (Bekalan / Perkhidmatan)",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-003",
+        "original_text": "Salinan Sijil Pematuhan Cukai dari Lembaga Hasil Dalam Negeri (TCC) berstatus PATUH serta jelas dan boleh diimbas melalui aplikasi MyTax.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "status_flag",
+          "field": "tcc_status",
+          "operator": "equals",
+          "value": "PATUH",
+          "reference_date": null
+        },
+        "explanation": "A valid Tax Compliance Certificate (TCC) with 'PATUH' status from LHDN is mandatory.",
+        "source_page": 4,
+        "source_excerpt": "Salinan Sijil Pematuhan Cukai dari Lembaga Hasil Dalam Negeri (TCC) berstatus PATUH",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-004",
+        "original_text": "Performance Bond amounts to 2.5% of the contract sum in the form of cash or banker's Guarantee or Banker's draft.",
+        "language": "en",
+        "mandatory_status": "conditional",
+        "category": "performance_bond",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "performance_bond",
+          "operator": "required_if_value_exceeds",
+          "value": 200000,
+          "reference_date": null
+        },
+        "explanation": "A performance bond of 2.5% of the contract sum is required for contracts valued at RM200,000.00 and above.",
+        "source_page": 19,
+        "source_excerpt": "Penender yang berjaya mesti menyediakan 'Perfomance Bond' berjumlah 2.5% daripada jumlah kontrak... (Terpakai untuk kontrak Melebihi RM200,000.00 Sahaja)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-005",
+        "original_text": "Borang Kontrak (AM) 1/91 (Wajib Disertakan & Diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Borang Kontrak (AM) 1/91",
+          "reference_date": null
+        },
+        "explanation": "Submission of the completed Borang Kontrak (AM) 1/91 is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "1. Borang Kontrak (AM) 1/91 (Wajib Disertakan & Diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-006",
+        "original_text": "Surat Akuan Pembida (Wajib Disertakan & Diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Surat Akuan Pembida",
+          "reference_date": null
+        },
+        "explanation": "Submission of the completed Surat Akuan Pembida is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "3. Surat Akuan Pembida (Wajib Disertakan & Diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-007",
+        "original_text": "Borang Pengisytiharan Pemunya Benefisial (Wajib Disertakan & Diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Borang Pengisytiharan Pemunya Benefisial",
+          "reference_date": null
+        },
+        "explanation": "Submission of the completed Borang Pengisytiharan Pemunya Benefisial is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "6. Borang Pengisytiharan Pemunya Benefisial (Wajib Disertakan & Diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-008",
+        "original_text": "Surat Akuan Syarikat Dalam Menangani Jenayah Pemerdagangan Orang dan Buruh Paksa (Wajib Disertakan dan Diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Surat Akuan Syarikat Dalam Menangani Jenayah Pemerdagangan Orang dan Buruh Paksa",
+          "reference_date": null
+        },
+        "explanation": "Submission of the completed Surat Akuan Syarikat Dalam Menangani Jenayah Pemerdagangan Orang dan Buruh Paksa is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "7. Surat Akuan Syarikat Dalam Menangani Jenayah Pemerdagangan Orang dan Buruh Paksa (Wajib Disertakan dan Diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-009",
+        "original_text": "Tarikh tutup penghantaran dokumen: 3 NOVEMBER 2026 (SELASA)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "submission_instructions",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "date_validity",
+          "field": "tender_closing_date",
+          "operator": "equals",
+          "value": "2026-11-03",
+          "reference_date": null
+        },
+        "explanation": "The tender submission deadline is 3 November 2026.",
+        "source_page": 2,
+        "source_excerpt": "3 NOVEMBER 2026 (SELASA)",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-010",
+        "original_text": "FI Perkhidmatan ini hanya dikenakan kepada Jumlah Harga Kontrak yang melebihi RM50,001.00 sahaja.",
+        "language": "ms",
+        "mandatory_status": "conditional",
+        "category": "other",
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "service_fee",
+          "operator": "required_if_value_exceeds",
+          "value": 50001,
+          "reference_date": null
+        },
+        "explanation": "A service fee applies to successful tenderers for contracts exceeding RM50,001.00.",
+        "source_page": 18,
+        "source_excerpt": "FI Perkhidmatan ini hanya dikenakan kepada Jumlah Harga Kontrak yang melebihi RM50,001.00 sahaja.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-011",
+        "original_text": "Contractors are to be informed that for all Works exceeding RM 500,000.00 (five hundred thousands), a levy amounting to 0.125% (zero point one two five percent) of the Contract Sum is imposed by Construction Industry Development Board Of Malaysia (CIDB)",
+        "language": "en",
+        "mandatory_status": "conditional",
+        "category": "other",
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "cidb_levy",
+          "operator": "required_if_value_exceeds",
+          "value": 500000,
+          "reference_date": null
+        },
+        "explanation": "A CIDB levy of 0.125% applies to contracts exceeding RM500,000.00.",
+        "source_page": 18,
+        "source_excerpt": "Contractors are to be informed that for all Works exceeding RM 500,000.00 (five hundred thousands), a levy amounting to 0.125% (zero point one two five percent) of the Contract Sum is imposed by Construction Industry Development Board Of Malaysia (CIDB)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-012",
+        "original_text": "Borang Kontrak (Am) 9/93 dan 10/93 (Wajib Disertakan)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Borang Kontrak (Am) 9/93 dan 10/93",
+          "reference_date": null
+        },
+        "explanation": "Submission of Borang Kontrak (Am) 9/93 and 10/93 is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "Borang Kontrak (Am) 9/93 dan 10/93 (Wajib Disertakan)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-013",
+        "original_text": "Borang Sebut Harga Bekalan/Perkhidmatan/Kerja (Perlu diisi dengan lengkap termasuk tempoh siap, nilai tawaran dan ditandatangani) (Wajib Disertakan dan Diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Borang Sebut Harga Bekalan/Perkhidmatan/Kerja",
+          "reference_date": null
+        },
+        "explanation": "Submission of the completed and signed Quotation Form (Borang Sebut Harga) is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "Borang Sebut Harga Bekalan/Perkhidmatan/Kerja (Perlu diisi dengan lengkap termasuk tempoh siap, nilai tawaran dan ditandatangani) (Wajib Disertakan dan Diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-014",
+        "original_text": "Lampiran E - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Lampiran E",
+          "reference_date": null
+        },
+        "explanation": "Submission of Lampiran E (Official Secrets Act declaration) is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "Lampiran E - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-015",
+        "original_text": "Lampiran F - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Lain Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Apabila Tamat Kontrak Perkhidmatan Dengan Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Lampiran F",
+          "reference_date": null
+        },
+        "explanation": "Submission of Lampiran F (Official Secrets Act declaration upon contract completion) is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "Lampiran F - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Lain Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Apabila Tamat Kontrak Perkhidmatan Dengan Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-016",
+        "original_text": "Borang Kontrak (AM) 2/91 (Wajib Disertakan)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Borang Kontrak (AM) 2/91",
+          "reference_date": null
+        },
+        "explanation": "Submission of Borang Kontrak (AM) 2/91 is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "Borang Kontrak (AM) 2/91 (Wajib Disertakan)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-017",
+        "original_text": "Senarai Kuantiti (BQ) (Wajib Disertakan dan Diisi)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mandatory_form",
+          "operator": "required",
+          "value": "Senarai Kuantiti (BQ)",
+          "reference_date": null
+        },
+        "explanation": "Submission of the completed Bill of Quantities (BQ) is mandatory.",
+        "source_page": 3,
+        "source_excerpt": "Senarai Kuantiti (BQ) (Wajib Disertakan dan Diisi)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-018",
+        "original_text": "Salinan Sijil Pendaftaran Syarikat/Perniagaan (SSM) berserta Lampiran Maklumat Perniagaan dan Lampiran Maklumat Pemilik Perniagaan.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "ssm_registration",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Submission of SSM registration certificate including business and owner information attachments is mandatory.",
+        "source_page": 4,
+        "source_excerpt": "Salinan Sijil Pendaftaran Syarikat/Perniagaan (SSM) berserta Lampiran Maklumat Perniagaan dan Lampiran Maklumat Pemilik Perniagaan.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-019",
+        "original_text": "Salinan Sijil Akuan Bumiputera Dari Kementerian Kewangan (Bekalan / Perkhidmatan) (Jika Berkaitan)",
+        "language": "ms",
+        "mandatory_status": "conditional",
+        "category": "bumiputera_status",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "bumiputera_status",
+          "field": "bumiputera_status",
+          "operator": "required_if_applicable",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Submission of Bumiputera status certificate is required if applicable to the bidder.",
+        "source_page": 4,
+        "source_excerpt": "Salinan Sijil Akuan Bumiputera Dari Kementerian Kewangan (Bekalan / Perkhidmatan) (Jika Berkaitan)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-020",
+        "original_text": "Salinan Sijil Akuan Pembuat Dari Kementerian Kewangan (Bekalan/ Perkhidmatan) (Jika Berkaitan)",
+        "language": "ms",
+        "mandatory_status": "conditional",
+        "category": "mof_registration",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "mof_manufacturer_certificate",
+          "operator": "required_if_applicable",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Submission of MOF Manufacturer Certificate is required if applicable.",
+        "source_page": 4,
+        "source_excerpt": "Salinan Sijil Akuan Pembuat Dari Kementerian Kewangan (Bekalan/ Perkhidmatan) (Jika Berkaitan)",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-021",
+        "original_text": "Salinan Penyata Bulanan Akaun Bank (3 BULAN TERKINI) yang telah disahkan oleh Pihak Bank.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "financial_technical_experience",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "bank_statement",
+          "operator": "required",
+          "value": "3 months",
+          "reference_date": null
+        },
+        "explanation": "Submission of the last 3 months of bank statements certified by the bank is mandatory.",
+        "source_page": 4,
+        "source_excerpt": "Salinan Penyata Bulanan Akaun Bank (3 BULAN TERKINI) yang telah disahkan oleh Pihak Bank.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-022",
+        "original_text": "Salinan PENGESAHAN SIAP KERJA (Certificate of Practical Completion) (Agensi Kerajaan ) bagi 2 tahun terkini SAHAJA.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "financial_technical_experience",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "past_performance",
+          "operator": "required",
+          "value": "2 years",
+          "reference_date": null
+        },
+        "explanation": "Submission of Certificate of Practical Completion (CPC) from government agencies for the last 2 years is mandatory.",
+        "source_page": 4,
+        "source_excerpt": "Salinan PENGESAHAN SIAP KERJA (Certificate of Practical Completion) (Agensi Kerajaan ) bagi 2 tahun terkini SAHAJA.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-023",
+        "original_text": "Insurance of Works amount to the Contract Sum in the join name of Council and Contractor for the duration of the contract",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "performance_bond",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "insurance_works",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Contractor must provide Insurance of Works covering the contract sum in the joint name of the Council and Contractor.",
+        "source_page": 17,
+        "source_excerpt": "Insurance of Works amount to the Contract Sum in the join name of Council and Contractor for the duration of the contract",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-024",
+        "original_text": "The public liability insurance in the joint name of Council and Contractor and coverage shall covers the contract period.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "performance_bond",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "public_liability_insurance",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Public liability insurance in the joint name of the Council and Contractor is required for the contract period.",
+        "source_page": 17,
+        "source_excerpt": "The public liability insurance in the joint name of Council and Contractor and coverage shall covers the contract period.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-025",
+        "original_text": "Contractor's All Risk Insurance (CAR) ... shall be deem to include the public liability insurance",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "performance_bond",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "contractors_all_risk_insurance",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Contractor's All Risk Insurance (CAR) is required.",
+        "source_page": 17,
+        "source_excerpt": "Contractor's All Risk Insurance (CAR) ... shall be deem to include the public liability insurance",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-026",
+        "original_text": "The workmen's compensation equals to 10% of the contract sum at the contractor's own cost and expense in the joint name of the Council and Contractor.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "performance_bond",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "workmens_compensation",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Workmen's compensation insurance equal to 10% of the contract sum is required.",
+        "source_page": 17,
+        "source_excerpt": "The workmen's compensation equals to 10% of the contract sum at the contractor's own cost and expense in the joint name of the Council and Contractor.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-027",
+        "original_text": "PENENDER PERLU MELANTIK SUB-KONTRAKTOR YANG AKAN MELAKUKAN KERJA-KERJA MEMBEKAL DAN MEMASANG, PENDAWAIAN DAN ALAT KELENGKAPAN ELEKTRIK YANG MEMPUNYAI PENGKHUSUSAN KOD BIDANG CIDB E11(KERJA AM ELEKTRIK)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "cidb_registration",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "cidb_category",
+          "field": "cidb_categories",
+          "operator": "contains",
+          "value": "E11",
+          "reference_date": null
+        },
+        "explanation": "The tenderer must appoint a sub-contractor with CIDB specialization code E11 for electrical works.",
+        "source_page": 18,
+        "source_excerpt": "PENENDER PERLU MELANTIK SUB-KONTRAKTOR YANG AKAN MELAKUKAN KERJA-KERJA MEMBEKAL DAN MEMASANG, PENDAWAIAN DAN ALAT KELENGKAPAN ELEKTRIK YANG MEMPUNYAI PENGKHUSUSAN KOD BIDANG CIDB E11(KERJA AM ELEKTRIK)",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-028",
+        "original_text": "Pihak Syarikat / Kontraktor DIWAJIBKAN merujuk dahulu bagi tujuan mendapatkan kebenaran dan pengeluaran Permit Pelupusan Sisa Pokok dari Jabatan Perhutanan yang terlibat.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "disposal_permit",
+          "operator": "required",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "The contractor is required to obtain a tree waste disposal permit from the relevant Forestry Department.",
+        "source_page": 26,
+        "source_excerpt": "Pihak Syarikat / Kontraktor DIWAJIBKAN merujuk dahulu bagi tujuan mendapatkan kebenaran dan pengeluaran Permit Pelupusan Sisa Pokok dari Jabatan Perhutanan yang terlibat.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-029",
+        "original_text": "[UNREADABLE / SCANNED PAGE 20] Text extraction yielded fewer than 50 characters (37 chars) even after OCR fallback; manual human inspection of page 20 is required.",
+        "language": "en",
+        "mandatory_status": "conditional",
+        "category": "other",
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "manual_page_review",
+          "operator": "requires_inspection",
+          "value": "page_20",
+          "reference_date": null
+        },
+        "explanation": "Page 20 could not be reliably read after OCR fallback. Per PRD 5.5 and 9.4, unreadable pages are never marked cleared and require manual review.",
+        "source_page": 20,
+        "source_excerpt": "NO SEBUTHARGA : S0175/26\nMEJA TAWARAN",
+        "confidence": "low",
+        "review_required": true,
+        "extraction_pass": "system_safeguard",
+        "validation_flags": [
+          "LOW_QUALITY_SOURCE_PAGE",
+          "UNREADABLE_PAGE_SAFEGUARD"
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "tender_file": "C:\\Users\\Joe\\OneDrive\\Desktop\\Umsprout\\data\\uploads\\tenders\\TND-6818fd3f\\MBI_462325MEJA.pdf",
+    "company_id": "COMP-001",
+    "company_name": "Syarikat Kejuruteraan Aman Sdn. Bhd.",
+    "evaluated_at": "2026-11-20T02:50:09.525930+00:00",
+    "summary": {
+      "total_requirements": 29,
+      "matched_rule_verified": 1,
+      "matched_user_evidenced": 0,
+      "gap": 1,
+      "needs_review": 27,
+      "not_applicable": 0,
+      "disqualifying_gaps": 1
+    },
+    "results": [
+      {
+        "requirement_id": "REQ-001",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "The Contractor shall visit the site before tendering",
+          "language": "en",
+          "category": "site_briefing",
+          "mandatory_status": "mandatory",
+          "source_page": 17,
+          "source_excerpt": "NOTE : The Contractor shall visit the site before tendering",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "site_visit",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-002",
+        "status": "matched_rule_verified",
+        "is_disqualifying": true,
+        "rule_id": "RULE_STATUS_FLAG",
+        "inputs": {
+          "flag_name": "mof_active",
+          "company_value": true,
+          "expected_value": true,
+          "user_confirmed": true
+        },
+        "comparison": {
+          "operator": "==",
+          "flag_name": "mof_active",
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "expression": "mof_active: True == True -> True"
+        },
+        "tender_condition": {
+          "original_text": "Salinan Sijil Akuan Pendaftaran Dari Kementerian Kewangan (Bekalan / Perkhidmatan)",
+          "language": "ms",
+          "category": "mof_registration",
+          "mandatory_status": "mandatory",
+          "source_page": 4,
+          "source_excerpt": "ii. Salinan Sijil Akuan Pendaftaran Dari Kementerian Kewangan (Bekalan / Perkhidmatan)",
+          "structured_condition": {
+            "rule_type": "mof_active",
+            "field": "mof_registration",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": {
+          "document_id": "DOC-MOF-001",
+          "document_type": "mof_certificate",
+          "title": "Sijil Akuan Pendaftaran Syarikat Kementerian Kewangan (MOF)",
+          "filename": "MOF_Certificate_Aman_2025_2028.pdf",
+          "storage_path": "company_docs/MOF_Certificate_Aman_2025_2028.pdf",
+          "valid_from": "2025-01-15",
+          "valid_until": "2028-01-14",
+          "user_confirmed": true
+        },
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Company status 'mof_active' (True) satisfies tender requirement (True)."
+      },
+      {
+        "requirement_id": "REQ-003",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": "RULE_STATUS_FLAG",
+        "inputs": {
+          "flag_name": "tcc_status",
+          "expected_value": "PATUH"
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Unsupported or unmapped status flag 'tcc_status'."
+        },
+        "tender_condition": {
+          "original_text": "Salinan Sijil Pematuhan Cukai dari Lembaga Hasil Dalam Negeri (TCC) berstatus PATUH serta jelas dan boleh diimbas melalui aplikasi MyTax.",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 4,
+          "source_excerpt": "Salinan Sijil Pematuhan Cukai dari Lembaga Hasil Dalam Negeri (TCC) berstatus PATUH",
+          "structured_condition": {
+            "rule_type": "status_flag",
+            "field": "tcc_status",
+            "operator": "equals",
+            "value": "PATUH",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: no supported deterministic mapping for status flag 'tcc_status'."
+      },
+      {
+        "requirement_id": "REQ-004",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Performance Bond amounts to 2.5% of the contract sum in the form of cash or banker's Guarantee or Banker's draft.",
+          "language": "en",
+          "category": "performance_bond",
+          "mandatory_status": "conditional",
+          "source_page": 19,
+          "source_excerpt": "Penender yang berjaya mesti menyediakan 'Perfomance Bond' berjumlah 2.5% daripada jumlah kontrak... (Terpakai untuk kontrak Melebihi RM200,000.00 Sahaja)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "performance_bond",
+            "operator": "required_if_value_exceeds",
+            "value": 200000,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-005",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Borang Kontrak (AM) 1/91 (Wajib Disertakan & Diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "1. Borang Kontrak (AM) 1/91 (Wajib Disertakan & Diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Borang Kontrak (AM) 1/91",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-006",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Surat Akuan Pembida (Wajib Disertakan & Diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "3. Surat Akuan Pembida (Wajib Disertakan & Diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Surat Akuan Pembida",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-007",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Borang Pengisytiharan Pemunya Benefisial (Wajib Disertakan & Diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "6. Borang Pengisytiharan Pemunya Benefisial (Wajib Disertakan & Diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Borang Pengisytiharan Pemunya Benefisial",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-008",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Surat Akuan Syarikat Dalam Menangani Jenayah Pemerdagangan Orang dan Buruh Paksa (Wajib Disertakan dan Diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "7. Surat Akuan Syarikat Dalam Menangani Jenayah Pemerdagangan Orang dan Buruh Paksa (Wajib Disertakan dan Diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Surat Akuan Syarikat Dalam Menangani Jenayah Pemerdagangan Orang dan Buruh Paksa",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-009",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": "RULE_DATE_VALIDITY",
+        "inputs": {
+          "field": "tender_closing_date",
+          "reference_date": "2026-11-03"
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Unsupported date_validity target 'tender_closing_date'."
+        },
+        "tender_condition": {
+          "original_text": "Tarikh tutup penghantaran dokumen: 3 NOVEMBER 2026 (SELASA)",
+          "language": "ms",
+          "category": "submission_instructions",
+          "mandatory_status": "mandatory",
+          "source_page": 2,
+          "source_excerpt": "3 NOVEMBER 2026 (SELASA)",
+          "structured_condition": {
+            "rule_type": "date_validity",
+            "field": "tender_closing_date",
+            "operator": "equals",
+            "value": "2026-11-03",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: no supported credential date mapping for 'tender_closing_date'."
+      },
+      {
+        "requirement_id": "REQ-010",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "FI Perkhidmatan ini hanya dikenakan kepada Jumlah Harga Kontrak yang melebihi RM50,001.00 sahaja.",
+          "language": "ms",
+          "category": "other",
+          "mandatory_status": "conditional",
+          "source_page": 18,
+          "source_excerpt": "FI Perkhidmatan ini hanya dikenakan kepada Jumlah Harga Kontrak yang melebihi RM50,001.00 sahaja.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "service_fee",
+            "operator": "required_if_value_exceeds",
+            "value": 50001,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-011",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Contractors are to be informed that for all Works exceeding RM 500,000.00 (five hundred thousands), a levy amounting to 0.125% (zero point one two five percent) of the Contract Sum is imposed by Construction Industry Development Board Of Malaysia (CIDB)",
+          "language": "en",
+          "category": "other",
+          "mandatory_status": "conditional",
+          "source_page": 18,
+          "source_excerpt": "Contractors are to be informed that for all Works exceeding RM 500,000.00 (five hundred thousands), a levy amounting to 0.125% (zero point one two five percent) of the Contract Sum is imposed by Construction Industry Development Board Of Malaysia (CIDB)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "cidb_levy",
+            "operator": "required_if_value_exceeds",
+            "value": 500000,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-012",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Borang Kontrak (Am) 9/93 dan 10/93 (Wajib Disertakan)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "Borang Kontrak (Am) 9/93 dan 10/93 (Wajib Disertakan)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Borang Kontrak (Am) 9/93 dan 10/93",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-013",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Borang Sebut Harga Bekalan/Perkhidmatan/Kerja (Perlu diisi dengan lengkap termasuk tempoh siap, nilai tawaran dan ditandatangani) (Wajib Disertakan dan Diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "Borang Sebut Harga Bekalan/Perkhidmatan/Kerja (Perlu diisi dengan lengkap termasuk tempoh siap, nilai tawaran dan ditandatangani) (Wajib Disertakan dan Diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Borang Sebut Harga Bekalan/Perkhidmatan/Kerja",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-014",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Lampiran E - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "Lampiran E - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Lampiran E",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-015",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Lampiran F - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Lain Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Apabila Tamat Kontrak Perkhidmatan Dengan Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "Lampiran F - Perakuan Untuk Ditandatangani Oleh Komuniti Keselamatan Atau Mana-Mana Pihak Lain Yang Berurusan Dengan Perkhidmatan Awam Atau Yang Berkhidmat Di Kediaman Rasmi Kerajaan Apabila Tamat Kontrak Perkhidmatan Dengan Kerajaan Berkaitan Dengan Akta Rahsia Rasmi 1972 (Akta 88) (Wajib Disertakan dan diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Lampiran F",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-016",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Borang Kontrak (AM) 2/91 (Wajib Disertakan)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "Borang Kontrak (AM) 2/91 (Wajib Disertakan)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Borang Kontrak (AM) 2/91",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-017",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Senarai Kuantiti (BQ) (Wajib Disertakan dan Diisi)",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 3,
+          "source_excerpt": "Senarai Kuantiti (BQ) (Wajib Disertakan dan Diisi)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mandatory_form",
+            "operator": "required",
+            "value": "Senarai Kuantiti (BQ)",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-018",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Salinan Sijil Pendaftaran Syarikat/Perniagaan (SSM) berserta Lampiran Maklumat Perniagaan dan Lampiran Maklumat Pemilik Perniagaan.",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 4,
+          "source_excerpt": "Salinan Sijil Pendaftaran Syarikat/Perniagaan (SSM) berserta Lampiran Maklumat Perniagaan dan Lampiran Maklumat Pemilik Perniagaan.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "ssm_registration",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-019",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Salinan Sijil Akuan Bumiputera Dari Kementerian Kewangan (Bekalan / Perkhidmatan) (Jika Berkaitan)",
+          "language": "ms",
+          "category": "bumiputera_status",
+          "mandatory_status": "conditional",
+          "source_page": 4,
+          "source_excerpt": "Salinan Sijil Akuan Bumiputera Dari Kementerian Kewangan (Bekalan / Perkhidmatan) (Jika Berkaitan)",
+          "structured_condition": {
+            "rule_type": "bumiputera_status",
+            "field": "bumiputera_status",
+            "operator": "required_if_applicable",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-020",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Salinan Sijil Akuan Pembuat Dari Kementerian Kewangan (Bekalan/ Perkhidmatan) (Jika Berkaitan)",
+          "language": "ms",
+          "category": "mof_registration",
+          "mandatory_status": "conditional",
+          "source_page": 4,
+          "source_excerpt": "Salinan Sijil Akuan Pembuat Dari Kementerian Kewangan (Bekalan/ Perkhidmatan) (Jika Berkaitan)",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "mof_manufacturer_certificate",
+            "operator": "required_if_applicable",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-021",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Salinan Penyata Bulanan Akaun Bank (3 BULAN TERKINI) yang telah disahkan oleh Pihak Bank.",
+          "language": "ms",
+          "category": "financial_technical_experience",
+          "mandatory_status": "mandatory",
+          "source_page": 4,
+          "source_excerpt": "Salinan Penyata Bulanan Akaun Bank (3 BULAN TERKINI) yang telah disahkan oleh Pihak Bank.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "bank_statement",
+            "operator": "required",
+            "value": "3 months",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-022",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Salinan PENGESAHAN SIAP KERJA (Certificate of Practical Completion) (Agensi Kerajaan ) bagi 2 tahun terkini SAHAJA.",
+          "language": "ms",
+          "category": "financial_technical_experience",
+          "mandatory_status": "mandatory",
+          "source_page": 4,
+          "source_excerpt": "Salinan PENGESAHAN SIAP KERJA (Certificate of Practical Completion) (Agensi Kerajaan ) bagi 2 tahun terkini SAHAJA.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "past_performance",
+            "operator": "required",
+            "value": "2 years",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-023",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Insurance of Works amount to the Contract Sum in the join name of Council and Contractor for the duration of the contract",
+          "language": "en",
+          "category": "performance_bond",
+          "mandatory_status": "mandatory",
+          "source_page": 17,
+          "source_excerpt": "Insurance of Works amount to the Contract Sum in the join name of Council and Contractor for the duration of the contract",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "insurance_works",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-024",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "The public liability insurance in the joint name of Council and Contractor and coverage shall covers the contract period.",
+          "language": "en",
+          "category": "performance_bond",
+          "mandatory_status": "mandatory",
+          "source_page": 17,
+          "source_excerpt": "The public liability insurance in the joint name of Council and Contractor and coverage shall covers the contract period.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "public_liability_insurance",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-025",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Contractor's All Risk Insurance (CAR) ... shall be deem to include the public liability insurance",
+          "language": "en",
+          "category": "performance_bond",
+          "mandatory_status": "mandatory",
+          "source_page": 17,
+          "source_excerpt": "Contractor's All Risk Insurance (CAR) ... shall be deem to include the public liability insurance",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "contractors_all_risk_insurance",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-026",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "The workmen's compensation equals to 10% of the contract sum at the contractor's own cost and expense in the joint name of the Council and Contractor.",
+          "language": "en",
+          "category": "performance_bond",
+          "mandatory_status": "mandatory",
+          "source_page": 17,
+          "source_excerpt": "The workmen's compensation equals to 10% of the contract sum at the contractor's own cost and expense in the joint name of the Council and Contractor.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "workmens_compensation",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-027",
+        "status": "gap",
+        "is_disqualifying": true,
+        "rule_id": "RULE_CIDB_CATEGORY_MEMBERSHIP",
+        "inputs": {
+          "company_cidb_categories": [
+            "B04",
+            "M15",
+            "CE21"
+          ],
+          "required_cidb_categories": [
+            "E11"
+          ],
+          "user_confirmed": true
+        },
+        "comparison": {
+          "operator": "contains",
+          "required": [
+            "E11"
+          ],
+          "actual": [
+            "B04",
+            "M15",
+            "CE21"
+          ],
+          "missing": [
+            "E11"
+          ],
+          "passed": false,
+          "expression": "['E11'] subset_of ['B04', 'M15', 'CE21'] -> False"
+        },
+        "tender_condition": {
+          "original_text": "PENENDER PERLU MELANTIK SUB-KONTRAKTOR YANG AKAN MELAKUKAN KERJA-KERJA MEMBEKAL DAN MEMASANG, PENDAWAIAN DAN ALAT KELENGKAPAN ELEKTRIK YANG MEMPUNYAI PENGKHUSUSAN KOD BIDANG CIDB E11(KERJA AM ELEKTRIK)",
+          "language": "ms",
+          "category": "cidb_registration",
+          "mandatory_status": "mandatory",
+          "source_page": 18,
+          "source_excerpt": "PENENDER PERLU MELANTIK SUB-KONTRAKTOR YANG AKAN MELAKUKAN KERJA-KERJA MEMBEKAL DAN MEMASANG, PENDAWAIAN DAN ALAT KELENGKAPAN ELEKTRIK YANG MEMPUNYAI PENGKHUSUSAN KOD BIDANG CIDB E11(KERJA AM ELEKTRIK)",
+          "structured_condition": {
+            "rule_type": "cidb_category",
+            "field": "cidb_categories",
+            "operator": "contains",
+            "value": "E11",
+            "reference_date": null
+          }
+        },
+        "company_evidence": {
+          "document_id": "DOC-CIDB-001",
+          "document_type": "cidb_certificate",
+          "title": "Sijil Perakuan Pendaftaran Kontraktor (PPK) CIDB - Gred G3",
+          "filename": "CIDB_PPK_G3_Aman_2024_2027.pdf",
+          "storage_path": "company_docs/CIDB_PPK_G3_Aman_2024_2027.pdf",
+          "valid_from": "2024-06-01",
+          "valid_until": "2027-05-31",
+          "user_confirmed": true
+        },
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Gap: Company is missing required CIDB category E11."
+      },
+      {
+        "requirement_id": "REQ-028",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Pihak Syarikat / Kontraktor DIWAJIBKAN merujuk dahulu bagi tujuan mendapatkan kebenaran dan pengeluaran Permit Pelupusan Sisa Pokok dari Jabatan Perhutanan yang terlibat.",
+          "language": "ms",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "source_page": 26,
+          "source_excerpt": "Pihak Syarikat / Kontraktor DIWAJIBKAN merujuk dahulu bagi tujuan mendapatkan kebenaran dan pengeluaran Permit Pelupusan Sisa Pokok dari Jabatan Perhutanan yang terlibat.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "disposal_permit",
+            "operator": "required",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-029",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Unreadable/low-quality source page requires manual inspection."
+        },
+        "tender_condition": {
+          "original_text": "[UNREADABLE / SCANNED PAGE 20] Text extraction yielded fewer than 50 characters (37 chars) even after OCR fallback; manual human inspection of page 20 is required.",
+          "language": "en",
+          "category": "other",
+          "mandatory_status": "conditional",
+          "source_page": 20,
+          "source_excerpt": "NO SEBUTHARGA : S0175/26\nMEJA TAWARAN",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "manual_page_review",
+            "operator": "requires_inspection",
+            "value": "page_20",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Unreadable/low-quality source page requires manual inspection."
+      }
+    ]
+  }
+}

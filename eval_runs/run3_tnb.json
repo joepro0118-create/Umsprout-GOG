@@ -1,0 +1,776 @@
+{
+  "run_meta": {
+    "run_label": "run3_tnb",
+    "requested_model": "gemini-3-flash-preview",
+    "model_used": "gemini-3-flash-preview",
+    "duration_ms": 13149.1,
+    "retries": [
+      {
+        "attempt": 1,
+        "status": "success",
+        "model_used": "gemini-3-flash-preview",
+        "elapsed_ms": 13149.1
+      }
+    ]
+  },
+  "tender": {
+    "id": "run3_tnb",
+    "title": "Notis_Tender_RFX_4000054778",
+    "filename": "Notis_Tender_RFX_4000054778.pdf",
+    "status": "completed",
+    "error": null,
+    "created_at": "2026-11-20T02:55:26.394656+00:00",
+    "completed_at": "2026-11-20T02:55:39.543769+00:00"
+  },
+  "extraction": {
+    "tender_file": "c:\\Users\\Joe\\OneDrive\\Desktop\\Umsprout\\samples\\real\\Notis_Tender_RFX_4000054778.pdf",
+    "extracted_at": "2026-11-20T02:55:39.542116+00:00",
+    "model_used": "gemini-3-flash-preview",
+    "page_count": 3,
+    "low_quality_pages": [],
+    "pages_info": [
+      {
+        "page_number": 1,
+        "char_count": 2651,
+        "image_count": 1,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 2,
+        "char_count": 2797,
+        "image_count": 1,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 3,
+        "char_count": 199,
+        "image_count": 1,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      }
+    ],
+    "summary": {
+      "total_requirements": 13,
+      "tier_a_mandatory_count": 13,
+      "tier_b_disqualifying_count": 10,
+      "informational_count": 0,
+      "review_required_count": 9,
+      "initial_pass_count": 9,
+      "coverage_pass_added_count": 4,
+      "uncited_or_flagged_count": 0,
+      "low_quality_page_count": 0
+    },
+    "requirements": [
+      {
+        "id": "REQ-001",
+        "original_text": "LULUS PRA KELAYAKAN PEMBEKAL DAN KONTRAKTOR TNB BAGI KATEGORI PERKHIDMATAN PEMBERSIHAN BANGUNAN DAN LANDSKAP (SOFT SERVICES)",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "status_flag",
+          "field": "tnb_prequalification",
+          "operator": "==",
+          "value": "LULUS PRA KELAYAKAN PERKHIDMATAN PEMBERSIHAN BANGUNAN DAN LANDSKAP (SOFT SERVICES)",
+          "reference_date": null
+        },
+        "explanation": "Bidders must have passed TNB's pre-qualification for the Building Cleaning and Landscape Services (Soft Services) category.",
+        "source_page": 1,
+        "source_excerpt": "LULUS PRA KELAYAKAN PEMBEKAL DAN KONTRAKTOR TNB BAGI KATEGORI PERKHIDMATAN PEMBERSIHAN BANGUNAN DAN LANDSKAP (SOFT SERVICES)",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-002",
+        "original_text": "Tarikh tutup (5 petang) 30 November 2026",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "submission_instructions",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "date_validity",
+          "field": "tender_closing_date",
+          "operator": "<=",
+          "value": "2026-11-30",
+          "reference_date": "2026-11-30"
+        },
+        "explanation": "The tender closing date is 30 November 2026 at 5:00 PM.",
+        "source_page": 1,
+        "source_excerpt": "Tarikh tutup (5 petang) 30 November 2026",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-003",
+        "original_text": "TAKLIMAT TENDER & LAWATAN TAPAK – SESI 1 o Tarikh: 23 November 2026 (Isnin) o Masa: 9.00 Pagi – 11.00 Pagi o Tempat: Pejabat TNB Tanah Merah, Kelantan",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "site_briefing",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "Compulsory attendance at the first site briefing session on 23 November 2026 at TNB Tanah Merah.",
+        "source_page": 1,
+        "source_excerpt": "TAKLIMAT TENDER & LAWATAN TAPAK – SESI 1 o Tarikh: 23 November 2026 (Isnin) o Masa: 9.00 Pagi – 11.00 Pagi",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-004",
+        "original_text": "Petender yang ingin menyertai tender ini DIWAJIBKAN hadir taklimat tender dan lawatan tapak di KEDUA-DUA sesi/lokasi seperti di atas.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "site_briefing",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "Attendance at BOTH site briefing sessions is mandatory. Failure to attend any session will result in disqualification.",
+        "source_page": 1,
+        "source_excerpt": "Petender yang ingin menyertai tender ini DIWAJIBKAN hadir taklimat tender dan lawatan tapak di KEDUA-DUA sesi/lokasi seperti di atas.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-005",
+        "original_text": "Hanya penama sijil berkenaan sahaja yang dibenarkan hadir ke taklimat tender dan lawatan tapak dan jika penama tidak dapat hadir, surat wakil kuasa hendaklah dibawa",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "site_briefing",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "Only the person named on the certificate may attend. If they cannot attend, an authorization letter (surat wakil kuasa) must be provided.",
+        "source_page": 1,
+        "source_excerpt": "Hanya penama sijil berkenaan sahaja yang dibenarkan hadir ke taklimat tender dan lawatan tapak dan jika penama tidak dapat hadir, surat wakil kuasa hendaklah dibawa",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-006",
+        "original_text": "Petender dikehendaki memakai pakaian keselamatan (PPE) semasa lawatan tapak diadakan.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "site_briefing",
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "Bidders must wear Personal Protective Equipment (PPE) during the site visit.",
+        "source_page": 1,
+        "source_excerpt": "Petender dikehendaki memakai pakaian keselamatan (PPE) semasa lawatan tapak diadakan.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-007",
+        "original_text": "Tender ini hanya boleh disertai oleh vendor/pembekal/kontraktor TNB yang telah mendaftar sebagai Supplier Self-Service (SUS Supplier).",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "status_flag",
+          "field": "tnb_sus_registered",
+          "operator": "==",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Only vendors registered as TNB Supplier Self-Service (SUS) are eligible to participate.",
+        "source_page": 2,
+        "source_excerpt": "Tender ini hanya boleh disertai oleh vendor/pembekal/kontraktor TNB yang telah mendaftar sebagai Supplier Self-Service (SUS Supplier).",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-008",
+        "original_text": "Semua sijil yang berkaitan mesti dikemaskini dalam Portal SUS bagi melayakkan penyertaan tender.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "All relevant certificates must be updated in the SUS Portal to be eligible.",
+        "source_page": 2,
+        "source_excerpt": "Semua sijil yang berkaitan mesti dikemaskini dalam Portal SUS bagi melayakkan penyertaan tender.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-009",
+        "original_text": "Penyerahan manual atau salinan akan ditolak.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "submission_instructions",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "status_flag",
+          "field": "e_submission_only",
+          "operator": "==",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Manual or hardcopy submissions will be rejected; the tender must be submitted electronically.",
+        "source_page": 2,
+        "source_excerpt": "Penyerahan manual atau salinan akan ditolak.",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-010",
+        "original_text": "Petender tidak dibenarkan untuk menyertai tender sekiranya tidak menghadirkan diri pada mana-mana sesi taklimat tender beserta lawatan tapak. Rekod kehadiran akan diambil bagi kedua-dua perkara ini.",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "site_briefing",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "Attendance at both site briefing sessions is mandatory; failure to attend any session will result in disqualification as attendance records are taken for both.",
+        "source_page": 1,
+        "source_excerpt": "Petender tidak dibenarkan untuk menyertai tender sekiranya tidak menghadirkan diri pada mana-mana sesi taklimat tender beserta lawatan tapak.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-011",
+        "original_text": "Sekiranya perlu, salinan sijil pra-kelayakan TNB perlu dibawa bersama semasa taklimat tender.",
+        "language": "ms",
+        "mandatory_status": "conditional",
+        "category": "mandatory_documents",
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "Tenderers may be required to bring a copy of their TNB pre-qualification certificate to the tender briefing.",
+        "source_page": 1,
+        "source_excerpt": "Sekiranya perlu, salinan sijil pra-kelayakan TNB perlu dibawa bersama semasa taklimat tender.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-012",
+        "original_text": "surat wakil kuasa hendaklah dibawa sebagai bukti dipertanggungjawabkan oleh penama ke atas syarikat mereka.",
+        "language": "ms",
+        "mandatory_status": "conditional",
+        "category": "site_briefing",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "If the person named on the certificate cannot attend the site visit, an official letter of authorization (surat wakil kuasa) must be presented.",
+        "source_page": 1,
+        "source_excerpt": "jika penama tidak dapat hadir, surat wakil kuasa hendaklah dibawa sebagai bukti",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-013",
+        "original_text": "Semua pembekal/kontraktor TNB sedia ada yang ingin menuntut SST dengan TNB mesti menghantar salinan surat Jabatan Kastam Diraja Malaysia ke Unit Pendaftaran Pembekal TNB melalui e-mel kepada SST-Vendor@tnb.com.my",
+        "language": "ms",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": null,
+          "operator": null,
+          "value": null,
+          "reference_date": null
+        },
+        "explanation": "Existing TNB suppliers wishing to claim SST must submit their Royal Malaysian Customs Department letter to the TNB Supplier Registration Unit via email.",
+        "source_page": 2,
+        "source_excerpt": "mesti menghantar salinan surat Jabatan Kastam Diraja Malaysia ke Unit Pendaftaran Pembekal TNB",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "coverage",
+        "validation_flags": []
+      }
+    ]
+  },
+  "assessment": {
+    "tender_file": "c:\\Users\\Joe\\OneDrive\\Desktop\\Umsprout\\samples\\real\\Notis_Tender_RFX_4000054778.pdf",
+    "company_id": "COMP-001",
+    "company_name": "Syarikat Kejuruteraan Aman Sdn. Bhd.",
+    "evaluated_at": "2026-11-20T02:55:39.543962+00:00",
+    "summary": {
+      "total_requirements": 13,
+      "matched_rule_verified": 0,
+      "matched_user_evidenced": 0,
+      "gap": 0,
+      "needs_review": 13,
+      "not_applicable": 0,
+      "disqualifying_gaps": 0
+    },
+    "results": [
+      {
+        "requirement_id": "REQ-001",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": "RULE_STATUS_FLAG",
+        "inputs": {
+          "flag_name": "tnb_prequalification",
+          "expected_value": "LULUS PRA KELAYAKAN PERKHIDMATAN PEMBERSIHAN BANGUNAN DAN LANDSKAP (SOFT SERVICES)"
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Unsupported or unmapped status flag 'tnb_prequalification'."
+        },
+        "tender_condition": {
+          "original_text": "LULUS PRA KELAYAKAN PEMBEKAL DAN KONTRAKTOR TNB BAGI KATEGORI PERKHIDMATAN PEMBERSIHAN BANGUNAN DAN LANDSKAP (SOFT SERVICES)",
+          "language": "ms",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "source_page": 1,
+          "source_excerpt": "LULUS PRA KELAYAKAN PEMBEKAL DAN KONTRAKTOR TNB BAGI KATEGORI PERKHIDMATAN PEMBERSIHAN BANGUNAN DAN LANDSKAP (SOFT SERVICES)",
+          "structured_condition": {
+            "rule_type": "status_flag",
+            "field": "tnb_prequalification",
+            "operator": "==",
+            "value": "LULUS PRA KELAYAKAN PERKHIDMATAN PEMBERSIHAN BANGUNAN DAN LANDSKAP (SOFT SERVICES)",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: no supported deterministic mapping for status flag 'tnb_prequalification'."
+      },
+      {
+        "requirement_id": "REQ-002",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": "RULE_DATE_VALIDITY",
+        "inputs": {
+          "field": "tender_closing_date",
+          "reference_date": "2026-11-30"
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Unsupported date_validity target 'tender_closing_date'."
+        },
+        "tender_condition": {
+          "original_text": "Tarikh tutup (5 petang) 30 November 2026",
+          "language": "ms",
+          "category": "submission_instructions",
+          "mandatory_status": "mandatory",
+          "source_page": 1,
+          "source_excerpt": "Tarikh tutup (5 petang) 30 November 2026",
+          "structured_condition": {
+            "rule_type": "date_validity",
+            "field": "tender_closing_date",
+            "operator": "<=",
+            "value": "2026-11-30",
+            "reference_date": "2026-11-30"
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: no supported credential date mapping for 'tender_closing_date'."
+      },
+      {
+        "requirement_id": "REQ-003",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "TAKLIMAT TENDER & LAWATAN TAPAK – SESI 1 o Tarikh: 23 November 2026 (Isnin) o Masa: 9.00 Pagi – 11.00 Pagi o Tempat: Pejabat TNB Tanah Merah, Kelantan",
+          "language": "ms",
+          "category": "site_briefing",
+          "mandatory_status": "mandatory",
+          "source_page": 1,
+          "source_excerpt": "TAKLIMAT TENDER & LAWATAN TAPAK – SESI 1 o Tarikh: 23 November 2026 (Isnin) o Masa: 9.00 Pagi – 11.00 Pagi",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-004",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Petender yang ingin menyertai tender ini DIWAJIBKAN hadir taklimat tender dan lawatan tapak di KEDUA-DUA sesi/lokasi seperti di atas.",
+          "language": "ms",
+          "category": "site_briefing",
+          "mandatory_status": "mandatory",
+          "source_page": 1,
+          "source_excerpt": "Petender yang ingin menyertai tender ini DIWAJIBKAN hadir taklimat tender dan lawatan tapak di KEDUA-DUA sesi/lokasi seperti di atas.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-005",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Hanya penama sijil berkenaan sahaja yang dibenarkan hadir ke taklimat tender dan lawatan tapak dan jika penama tidak dapat hadir, surat wakil kuasa hendaklah dibawa",
+          "language": "ms",
+          "category": "site_briefing",
+          "mandatory_status": "mandatory",
+          "source_page": 1,
+          "source_excerpt": "Hanya penama sijil berkenaan sahaja yang dibenarkan hadir ke taklimat tender dan lawatan tapak dan jika penama tidak dapat hadir, surat wakil kuasa hendaklah dibawa",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-006",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Petender dikehendaki memakai pakaian keselamatan (PPE) semasa lawatan tapak diadakan.",
+          "language": "ms",
+          "category": "site_briefing",
+          "mandatory_status": "mandatory",
+          "source_page": 1,
+          "source_excerpt": "Petender dikehendaki memakai pakaian keselamatan (PPE) semasa lawatan tapak diadakan.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-007",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": "RULE_STATUS_FLAG",
+        "inputs": {
+          "flag_name": "tnb_sus_registered",
+          "expected_value": true
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Unsupported or unmapped status flag 'tnb_sus_registered'."
+        },
+        "tender_condition": {
+          "original_text": "Tender ini hanya boleh disertai oleh vendor/pembekal/kontraktor TNB yang telah mendaftar sebagai Supplier Self-Service (SUS Supplier).",
+          "language": "ms",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "source_page": 2,
+          "source_excerpt": "Tender ini hanya boleh disertai oleh vendor/pembekal/kontraktor TNB yang telah mendaftar sebagai Supplier Self-Service (SUS Supplier).",
+          "structured_condition": {
+            "rule_type": "status_flag",
+            "field": "tnb_sus_registered",
+            "operator": "==",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: no supported deterministic mapping for status flag 'tnb_sus_registered'."
+      },
+      {
+        "requirement_id": "REQ-008",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Semua sijil yang berkaitan mesti dikemaskini dalam Portal SUS bagi melayakkan penyertaan tender.",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 2,
+          "source_excerpt": "Semua sijil yang berkaitan mesti dikemaskini dalam Portal SUS bagi melayakkan penyertaan tender.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-009",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": "RULE_STATUS_FLAG",
+        "inputs": {
+          "flag_name": "e_submission_only",
+          "expected_value": true
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Unsupported or unmapped status flag 'e_submission_only'."
+        },
+        "tender_condition": {
+          "original_text": "Penyerahan manual atau salinan akan ditolak.",
+          "language": "ms",
+          "category": "submission_instructions",
+          "mandatory_status": "mandatory",
+          "source_page": 2,
+          "source_excerpt": "Penyerahan manual atau salinan akan ditolak.",
+          "structured_condition": {
+            "rule_type": "status_flag",
+            "field": "e_submission_only",
+            "operator": "==",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: no supported deterministic mapping for status flag 'e_submission_only'."
+      },
+      {
+        "requirement_id": "REQ-010",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Petender tidak dibenarkan untuk menyertai tender sekiranya tidak menghadirkan diri pada mana-mana sesi taklimat tender beserta lawatan tapak. Rekod kehadiran akan diambil bagi kedua-dua perkara ini.",
+          "language": "ms",
+          "category": "site_briefing",
+          "mandatory_status": "mandatory",
+          "source_page": 1,
+          "source_excerpt": "Petender tidak dibenarkan untuk menyertai tender sekiranya tidak menghadirkan diri pada mana-mana sesi taklimat tender beserta lawatan tapak.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-011",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Sekiranya perlu, salinan sijil pra-kelayakan TNB perlu dibawa bersama semasa taklimat tender.",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "conditional",
+          "source_page": 1,
+          "source_excerpt": "Sekiranya perlu, salinan sijil pra-kelayakan TNB perlu dibawa bersama semasa taklimat tender.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-012",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "surat wakil kuasa hendaklah dibawa sebagai bukti dipertanggungjawabkan oleh penama ke atas syarikat mereka.",
+          "language": "ms",
+          "category": "site_briefing",
+          "mandatory_status": "conditional",
+          "source_page": 1,
+          "source_excerpt": "jika penama tidak dapat hadir, surat wakil kuasa hendaklah dibawa sebagai bukti",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-013",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Semua pembekal/kontraktor TNB sedia ada yang ingin menuntut SST dengan TNB mesti menghantar salinan surat Jabatan Kastam Diraja Malaysia ke Unit Pendaftaran Pembekal TNB melalui e-mel kepada SST-Vendor@tnb.com.my",
+          "language": "ms",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "source_page": 2,
+          "source_excerpt": "mesti menghantar salinan surat Jabatan Kastam Diraja Malaysia ke Unit Pendaftaran Pembekal TNB",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": null,
+            "operator": null,
+            "value": null,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      }
+    ]
+  }
+}

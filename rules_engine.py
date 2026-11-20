@@ -212,6 +212,7 @@ def _build_tender_condition(req: ExtractedRequirement) -> dict[str, Any]:
         "language": req.language,
         "category": req.category,
         "mandatory_status": req.mandatory_status,
+        "applies_to": req.applies_to,
         "source_page": req.source_page,
         "source_excerpt": req.source_excerpt,
         "structured_condition": (
@@ -821,6 +822,37 @@ def evaluate_requirement(
     """Evaluate one atomic requirement against a company profile deterministically."""
     tender_cond = _build_tender_condition(req)
 
+    # Fix 5: Only evaluate to Gap when applies_to == 'prime_bidder'.
+    # Subcontractor, conditional, or unknown scope requirements return needs_review with a clear reason.
+    if req.applies_to != "prime_bidder":
+        if req.applies_to == "subcontractor":
+            reason = (
+                "Needs Review: requirement applies to a subcontractor (applies_to='subcontractor'), "
+                "not the prime bidder; verify subcontractor appointment and supporting evidence manually."
+            )
+        elif req.applies_to == "conditional":
+            reason = (
+                "Needs Review: requirement is conditional (applies_to='conditional'); "
+                "verify whether the condition applies to this bid and attach evidence if applicable."
+            )
+        else:
+            reason = (
+                f"Needs Review: requirement applies_to='{req.applies_to}' (not prime_bidder); "
+                "requires manual human verification."
+            )
+        return ComplianceResult(
+            requirement_id=req.id,
+            status="needs_review",
+            is_disqualifying=req.is_disqualifying,
+            rule_id=None,
+            inputs={"applies_to": req.applies_to},
+            comparison={"evaluated": False, "reason": reason},
+            tender_condition=tender_cond,
+            company_evidence=None,
+            missing_evidence_marker=None,
+            explanation=reason,
+        )
+
     # Conservative gate: uncertain, conditional, safeguard, or non-structured items stay Needs Review.
     if (
         req.review_required
@@ -927,62 +959,104 @@ def evaluate_requirement(
             expected_document_type="bumiputera_certificate",
         )
     elif rule_type == "status_flag":
-        flag_name = (sc.field or "").strip()
-        if flag_name in ("mof_active", "mof_registration") and profile.mof is not None:
+        raw_flag_name = (sc.field or "").strip()
+        flag_key = raw_flag_name.lower()
+        ssm_aliases = {
+            "ssm_active",
+            "ssm_registration",
+            "ssm_registered",
+            "ssm",
+            "is_malaysian_registered",
+            "malaysian_registered_company",
+            "company_registration",
+        }
+        mof_aliases = {"mof_active", "mof_registration", "mof_registered", "mof"}
+        cidb_aliases = {"cidb_active", "cidb_registration", "cidb_registered", "cidb"}
+        bumi_aliases = {
+            "bumiputera_status",
+            "bumiputera",
+            "bumiputera_active",
+            "bumiputera_registration",
+        }
+        profile_flags_lower = {k.lower(): (k, v) for k, v in profile.status_flags.items()}
+
+        if flag_key in mof_aliases and profile.mof is not None:
             evidence = _evidence_to_dict(profile.get_document(profile.mof.evidence_document_id))
             res = check_status_flag(
-                flag_name=flag_name,
+                flag_name=raw_flag_name or "mof_active",
                 company_value=profile.mof.active,
                 expected_value=bool(sc.value) if sc.value is not None else True,
                 evidence=evidence,
                 user_confirmed=profile.mof.user_confirmed,
                 expected_document_type="mof_certificate",
             )
-        elif flag_name in ("cidb_active", "cidb_registration") and profile.cidb is not None:
+        elif flag_key in cidb_aliases and profile.cidb is not None:
             evidence = _evidence_to_dict(profile.get_document(profile.cidb.evidence_document_id))
             res = check_status_flag(
-                flag_name=flag_name,
+                flag_name=raw_flag_name or "cidb_active",
                 company_value=profile.cidb.active,
                 expected_value=bool(sc.value) if sc.value is not None else True,
                 evidence=evidence,
                 user_confirmed=profile.cidb.user_confirmed,
                 expected_document_type="cidb_certificate",
             )
-        elif flag_name == "bumiputera_status" and profile.bumiputera is not None:
+        elif flag_key in bumi_aliases and profile.bumiputera is not None:
             evidence = _evidence_to_dict(profile.get_document(profile.bumiputera.evidence_document_id))
             res = check_status_flag(
-                flag_name=flag_name,
+                flag_name=raw_flag_name or "bumiputera_status",
                 company_value=profile.bumiputera.status,
                 expected_value=bool(sc.value) if sc.value is not None else True,
                 evidence=evidence,
                 user_confirmed=profile.bumiputera.user_confirmed,
                 expected_document_type="bumiputera_certificate",
             )
-        elif flag_name in profile.status_flags:
-            flag_rec = profile.status_flags[flag_name]
+        elif flag_key in ssm_aliases and "ssm_active" in profile_flags_lower:
+            _, flag_rec = profile_flags_lower["ssm_active"]
             evidence = _evidence_to_dict(profile.get_document(flag_rec.evidence_document_id))
             res = check_status_flag(
-                flag_name=flag_name,
+                flag_name="ssm_active",
                 company_value=flag_rec.value,
                 expected_value=bool(sc.value) if sc.value is not None else True,
                 evidence=evidence,
                 user_confirmed=flag_rec.user_confirmed,
-                expected_document_type=f"{flag_name}_evidence",
+                expected_document_type="ssm_certificate",
+            )
+        elif flag_key in profile_flags_lower:
+            canonical_key, flag_rec = profile_flags_lower[flag_key]
+            evidence = _evidence_to_dict(profile.get_document(flag_rec.evidence_document_id))
+            res = check_status_flag(
+                flag_name=canonical_key,
+                company_value=flag_rec.value,
+                expected_value=bool(sc.value) if sc.value is not None else True,
+                evidence=evidence,
+                user_confirmed=flag_rec.user_confirmed,
+                expected_document_type=f"{canonical_key}_evidence",
             )
         else:
             res = {
                 "status": "needs_review",
                 "rule_id": "RULE_STATUS_FLAG",
-                "inputs": {"flag_name": flag_name, "expected_value": sc.value},
-                "comparison": {"evaluated": False, "reason": f"Unsupported or unmapped status flag '{flag_name}'."},
+                "inputs": {"flag_name": raw_flag_name, "expected_value": sc.value},
+                "comparison": {"evaluated": False, "reason": f"Unsupported or unmapped status flag '{raw_flag_name}'."},
                 "company_evidence": None,
                 "missing_evidence_marker": None,
-                "explanation": f"Needs Review: no supported deterministic mapping for status flag '{flag_name}'.",
+                "explanation": f"Needs Review: no supported deterministic mapping for status flag '{raw_flag_name}'.",
             }
     elif rule_type == "date_validity":
-        field_lower = (sc.field or "").lower()
+        field_lower = (sc.field or "").lower().strip()
+        text_lower = f"{req.original_text} {req.explanation}".lower()
         ref_date = sc.reference_date or (str(sc.value) if sc.value else None)
-        if "cidb" in field_lower:
+        is_closing_date_field = field_lower in (
+            "tender_closing_date",
+            "closing_date",
+            "submission_deadline",
+            "registration_validity",
+            "certificate_validity",
+        )
+
+        if "cidb" in field_lower or (
+            is_closing_date_field and (req.category == "cidb_registration" or "cidb" in text_lower)
+        ):
             cidb = profile.cidb
             evidence = _evidence_to_dict(profile.get_document(cidb.evidence_document_id)) if cidb else None
             res = check_date_validity(
@@ -994,7 +1068,14 @@ def evaluate_requirement(
                 user_confirmed=cidb.user_confirmed if cidb else True,
                 expected_document_type="cidb_certificate",
             )
-        elif "mof" in field_lower:
+        elif "mof" in field_lower or (
+            is_closing_date_field
+            and (
+                req.category == "mof_registration"
+                or "mof" in text_lower
+                or "kementerian kewangan" in text_lower
+            )
+        ):
             mof = profile.mof
             evidence = _evidence_to_dict(profile.get_document(mof.evidence_document_id)) if mof else None
             res = check_date_validity(
@@ -1006,7 +1087,9 @@ def evaluate_requirement(
                 user_confirmed=mof.user_confirmed if mof else True,
                 expected_document_type="mof_certificate",
             )
-        elif "bumi" in field_lower:
+        elif "bumi" in field_lower or (
+            is_closing_date_field and (req.category == "bumiputera_status" or "bumiputera" in text_lower)
+        ):
             bumi = profile.bumiputera
             evidence = _evidence_to_dict(profile.get_document(bumi.evidence_document_id)) if bumi else None
             res = check_date_validity(
@@ -1018,6 +1101,29 @@ def evaluate_requirement(
                 user_confirmed=bumi.user_confirmed if bumi else True,
                 expected_document_type="bumiputera_certificate",
             )
+        elif is_closing_date_field:
+            parsed_ref = _parse_iso_date(ref_date)
+            res = {
+                "status": "needs_review",
+                "rule_id": "RULE_DATE_VALIDITY",
+                "inputs": {
+                    "field": sc.field or "tender_closing_date",
+                    "tender_closing_date": parsed_ref.isoformat() if parsed_ref else ref_date,
+                },
+                "comparison": {
+                    "evaluated": False,
+                    "reason": (
+                        f"Tender closing date ({parsed_ref.isoformat() if parsed_ref else ref_date}) "
+                        "is a submission deadline instruction requiring timely bid submission."
+                    ),
+                },
+                "company_evidence": None,
+                "missing_evidence_marker": None,
+                "explanation": (
+                    f"Needs Review: tender closing date ({parsed_ref.isoformat() if parsed_ref else (ref_date or 'unspecified')}) "
+                    "is a submission deadline and requires human confirmation of timely submission."
+                ),
+            }
         else:
             res = {
                 "status": "needs_review",

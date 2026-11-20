@@ -1,0 +1,969 @@
+{
+  "tender": {
+    "id": "AFTER-BNM-RUN1",
+    "title": "BNM RFP OSS (After Fixes Run 1)",
+    "filename": "BNM_Request_for_Proposal_OSS.pdf",
+    "status": "completed",
+    "error": null,
+    "duration_ms": 27744.3
+  },
+  "call_stats": {
+    "model_used": "gemini-3-flash-preview",
+    "prompt_version": "v2.0",
+    "live_calls": 1,
+    "cache_hits": 0,
+    "completed_steps": [
+      "extract_merged_pass"
+    ]
+  },
+  "extraction": {
+    "tender_file": "samples\\real\\BNM_Request_for_Proposal_OSS.pdf",
+    "extracted_at": "2026-11-20T09:31:21.102503+00:00",
+    "model_used": "gemini-3-flash-preview",
+    "page_count": 13,
+    "low_quality_pages": [],
+    "pages_info": [
+      {
+        "page_number": 1,
+        "char_count": 384,
+        "image_count": 1,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 2,
+        "char_count": 651,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 3,
+        "char_count": 1322,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 4,
+        "char_count": 53,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 5,
+        "char_count": 2112,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 6,
+        "char_count": 558,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 7,
+        "char_count": 35,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 8,
+        "char_count": 1784,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 9,
+        "char_count": 1740,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 10,
+        "char_count": 1472,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 11,
+        "char_count": 1442,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 12,
+        "char_count": 1907,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      },
+      {
+        "page_number": 13,
+        "char_count": 710,
+        "image_count": 0,
+        "extraction_method": "text",
+        "low_quality": false,
+        "quality_notes": null
+      }
+    ],
+    "summary": {
+      "total_requirements": 14,
+      "tier_a_mandatory_count": 14,
+      "tier_b_disqualifying_count": 9,
+      "informational_count": 0,
+      "review_required_count": 12,
+      "initial_pass_count": 14,
+      "coverage_pass_added_count": 0,
+      "uncited_or_flagged_count": 0,
+      "low_quality_page_count": 0
+    },
+    "requirements": [
+      {
+        "id": "REQ-001",
+        "original_text": "Malaysian registered company",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "Failure to comply with any of the above criteria will result in unsuccessful bid for the tender",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "status_flag",
+          "field": "ssm_active",
+          "operator": "==",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "The bidder must be a company registered in Malaysia.",
+        "source_page": 8,
+        "source_excerpt": "2.1 Requirement for tender participation ... a) Malaysian registered company ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-002",
+        "original_text": "Company with at least 3 years’ experience in supply and delivery of OSS related items",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "financial_technical_experience",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "Failure to comply with any of the above criteria will result in unsuccessful bid for the tender",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "experience_years",
+          "operator": ">=",
+          "value": 3,
+          "reference_date": null
+        },
+        "explanation": "The company must have a minimum of 3 years of experience in supplying office supplies and stationery.",
+        "source_page": 8,
+        "source_excerpt": "2.1 Requirement for tender participation ... b) Company with at least 3 years’ experience in supply and delivery of OSS related items ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-003",
+        "original_text": "Company with positive net worth in the last four financial years or the last four years bank statement, if sole proprietor (2017 to 2020)",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "financial_technical_experience",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "Failure to comply with any of the above criteria will result in unsuccessful bid for the tender",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "net_worth",
+          "operator": "positive",
+          "value": "2017-2020",
+          "reference_date": null
+        },
+        "explanation": "Bidders must demonstrate a positive net worth for the years 2017-2020 through financial statements or bank statements for sole proprietors.",
+        "source_page": 8,
+        "source_excerpt": "2.1 Requirement for tender participation ... c) Company with positive net worth in the last four financial years or the last four years bank statement, if sole proprietor (2017 to 2020) ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-004",
+        "original_text": "Declaration of no litigation or dispute has been instituted against the company and/ or its directors",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "Failure to comply with any of the above criteria will result in unsuccessful bid for the tender",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "litigation_declaration",
+          "operator": "==",
+          "value": "none",
+          "reference_date": null
+        },
+        "explanation": "A declaration must be provided stating there is no ongoing litigation against the company or its directors.",
+        "source_page": 8,
+        "source_excerpt": "2.1 Requirement for tender participation ... d) Declaration of no litigation or dispute has been instituted against the company and/ or its directors ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-005",
+        "original_text": "Tenderers to supply ALL required items based on scope of works mentioned in Section 1.1 in RFP Document.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "Failure to comply with any of the above criteria will result in unsuccessful bid for the tender",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "scope_compliance",
+          "operator": "==",
+          "value": "full",
+          "reference_date": null
+        },
+        "explanation": "The bidder must be able to supply every item listed in the scope of work; partial bids are not allowed.",
+        "source_page": 8,
+        "source_excerpt": "2.1 Requirement for tender participation ... e) Tenderers to supply ALL required items based on scope of works mentioned in Section 1.1 in RFP Document. ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-006",
+        "original_text": "Sample packaging method for (i) and (ii) above to be submitted together with tender documents",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": false,
+        "rejection_quote": null,
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "packaging_samples",
+          "operator": "submitted",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "Bidders must submit physical samples of the packaging for the starter packs and larger boxes along with their proposal.",
+        "source_page": 5,
+        "source_excerpt": "Remarks: ... b) Sample packaging method for (i) and (ii) above to be submitted together with tender documents",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-007",
+        "original_text": "Each part (Part 1, Part 2 and Part 3) of the tender proposal is to be submitted together in three (3) separate envelopes.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "submission_instructions",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "The Bank does not accept responsibility for the premature opening (and therefore rejection) or mishandling of envelopes not properly sealed or not correctly labelled.",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "envelope_system",
+          "operator": "==",
+          "value": "3_envelopes",
+          "reference_date": null
+        },
+        "explanation": "The proposal must be split into three separate envelopes: Envelope A (Mandatory), Envelope B (Technical), and Envelope C (Commercial).",
+        "source_page": 9,
+        "source_excerpt": "2.3 Submission of Proposal ... c) Each part (Part 1, Part 2 and Part 3) of the tender proposal is to be submitted together in three (3) separate envelopes.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-008",
+        "original_text": "The closing date and time of this tender is on Friday, 4 June 2021 latest by 3:00 p.m. Tender proposals received after the closing date and time shall be invalid and will not be considered.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "submission_instructions",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "shall be invalid and will not be considered",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "date_validity",
+          "field": "submission_deadline",
+          "operator": "<=",
+          "value": "2021-06-04",
+          "reference_date": "2021-06-04"
+        },
+        "explanation": "The tender must be submitted by 3:00 PM on June 4, 2021. Late submissions will be disqualified.",
+        "source_page": 10,
+        "source_excerpt": "2.3 Submission of Proposal ... h) Closing date and validity period of tender proposal: ... The closing date and time of this tender is on Friday, 4 June 2021 latest by 3:00 p.m.",
+        "confidence": "high",
+        "review_required": false,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-009",
+        "original_text": "Tender proposals submitted by facsimile, e-mail, telex, telegram or any other means will NOT be considered or accepted.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "submission_instructions",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": true,
+        "rejection_quote": "will NOT be considered or accepted",
+        "is_disqualifying": true,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "submission_method",
+          "operator": "==",
+          "value": "physical_tender_box",
+          "reference_date": null
+        },
+        "explanation": "Only physical submissions into the designated tender box are allowed; electronic or faxed submissions will be rejected.",
+        "source_page": 10,
+        "source_excerpt": "2.3 Submission of Proposal ... e) Tender proposals submitted by facsimile, e-mail, telex, telegram or any other means will NOT be considered or accepted.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-010",
+        "original_text": "A declaration of Withdrawal from Tender Participation (Form X, Attachment 4) shall be submitted if tenderer(s) decide not to participate in this tender exercise after the collection of tender document.",
+        "language": "en",
+        "mandatory_status": "conditional",
+        "category": "mandatory_documents",
+        "applies_to": "conditional",
+        "has_rejection_language": false,
+        "rejection_quote": null,
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "withdrawal_form",
+          "operator": "submitted_if_withdrawing",
+          "value": "Form X",
+          "reference_date": null
+        },
+        "explanation": "If a company collects the tender document but decides not to bid, they must submit Form X (Withdrawal).",
+        "source_page": 11,
+        "source_excerpt": "2.3 Submission of Proposal ... i) A declaration of Withdrawal from Tender Participation (Form X, Attachment 4) shall be submitted if tenderer(s) decide not to participate",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-011",
+        "original_text": "The successful tenderer shall enter into a service agreement with the Bank. The provisions relating to the limit of liability and delay and liquidated damages are non-negotiable",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": false,
+        "rejection_quote": null,
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "service_agreement",
+          "operator": "must_sign",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "The winner must sign a service agreement with BNM and cannot negotiate terms regarding liability or liquidated damages.",
+        "source_page": 12,
+        "source_excerpt": "2.5 Form of Agreement ... a) The successful tenderer shall enter into a service agreement with the Bank.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-012",
+        "original_text": "The Bank only effects payment via electronic means. Hence, the successful Tenderer is required to state the details of the company’s bank and account number to BNM",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": false,
+        "rejection_quote": null,
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "payment_method",
+          "operator": "==",
+          "value": "e-payment",
+          "reference_date": null
+        },
+        "explanation": "BNM only pays via e-payment; bidders must provide bank account details.",
+        "source_page": 12,
+        "source_excerpt": "2.6 Payment ... a) i. The Bank only effects payment via electronic means.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-013",
+        "original_text": "Successful Tenderer must submit its current bank account’s statement for purposes of creating the e-payment account with BNM.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "mandatory_documents",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": false,
+        "rejection_quote": null,
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "bank_statement_for_epayment",
+          "operator": "submitted",
+          "value": true,
+          "reference_date": null
+        },
+        "explanation": "The successful bidder must provide a current bank statement to set up the electronic payment system.",
+        "source_page": 12,
+        "source_excerpt": "2.6 Payment ... b) Successful Tenderer must submit its current bank account’s statement",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      },
+      {
+        "id": "REQ-014",
+        "original_text": "Assessment of performance of the Company is based on ... minimum Key Performance Indicator (KPI) of at least 85%.",
+        "language": "en",
+        "mandatory_status": "mandatory",
+        "category": "other",
+        "applies_to": "prime_bidder",
+        "has_rejection_language": false,
+        "rejection_quote": null,
+        "is_disqualifying": false,
+        "structured_condition": {
+          "rule_type": "non_structured",
+          "field": "kpi_threshold",
+          "operator": ">=",
+          "value": 85,
+          "reference_date": null
+        },
+        "explanation": "The service provider must maintain a monthly performance KPI of at least 85%.",
+        "source_page": 6,
+        "source_excerpt": "1.2 Compliance to Service Level Standards ... a) ... minimum Key Performance Indicator (KPI) of at least 85%.",
+        "confidence": "high",
+        "review_required": true,
+        "extraction_pass": "initial",
+        "validation_flags": []
+      }
+    ]
+  },
+  "assessment": {
+    "tender_file": "samples\\real\\BNM_Request_for_Proposal_OSS.pdf",
+    "company_id": "COMP-001",
+    "company_name": "Syarikat Kejuruteraan Aman Sdn. Bhd.",
+    "evaluated_at": "2026-11-20T09:34:23.236728+00:00",
+    "summary": {
+      "total_requirements": 14,
+      "matched_rule_verified": 1,
+      "matched_user_evidenced": 0,
+      "gap": 0,
+      "needs_review": 13,
+      "not_applicable": 0,
+      "disqualifying_gaps": 0
+    },
+    "results": [
+      {
+        "requirement_id": "REQ-001",
+        "status": "matched_rule_verified",
+        "is_disqualifying": true,
+        "rule_id": "RULE_STATUS_FLAG",
+        "inputs": {
+          "flag_name": "ssm_active",
+          "company_value": true,
+          "expected_value": true,
+          "user_confirmed": true
+        },
+        "comparison": {
+          "operator": "==",
+          "flag_name": "ssm_active",
+          "actual": true,
+          "expected": true,
+          "passed": true,
+          "expression": "ssm_active: True == True -> True"
+        },
+        "tender_condition": {
+          "original_text": "Malaysian registered company",
+          "language": "en",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 8,
+          "source_excerpt": "2.1 Requirement for tender participation ... a) Malaysian registered company ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+          "structured_condition": {
+            "rule_type": "status_flag",
+            "field": "ssm_active",
+            "operator": "==",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": {
+          "document_id": "DOC-SSM-001",
+          "document_type": "ssm_certificate",
+          "title": "SSM Corporate Profile & Certificate of Incorporation",
+          "filename": "SSM_Profile_Aman_2026.pdf",
+          "storage_path": "company_docs/SSM_Profile_Aman_2026.pdf",
+          "valid_from": "2019-07-12",
+          "valid_until": null,
+          "user_confirmed": true
+        },
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Company status 'ssm_active' (True) satisfies tender requirement (True)."
+      },
+      {
+        "requirement_id": "REQ-002",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Company with at least 3 years’ experience in supply and delivery of OSS related items",
+          "language": "en",
+          "category": "financial_technical_experience",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 8,
+          "source_excerpt": "2.1 Requirement for tender participation ... b) Company with at least 3 years’ experience in supply and delivery of OSS related items ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "experience_years",
+            "operator": ">=",
+            "value": 3,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-003",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Company with positive net worth in the last four financial years or the last four years bank statement, if sole proprietor (2017 to 2020)",
+          "language": "en",
+          "category": "financial_technical_experience",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 8,
+          "source_excerpt": "2.1 Requirement for tender participation ... c) Company with positive net worth in the last four financial years or the last four years bank statement, if sole proprietor (2017 to 2020) ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "net_worth",
+            "operator": "positive",
+            "value": "2017-2020",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-004",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Declaration of no litigation or dispute has been instituted against the company and/ or its directors",
+          "language": "en",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 8,
+          "source_excerpt": "2.1 Requirement for tender participation ... d) Declaration of no litigation or dispute has been instituted against the company and/ or its directors ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "litigation_declaration",
+            "operator": "==",
+            "value": "none",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-005",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Tenderers to supply ALL required items based on scope of works mentioned in Section 1.1 in RFP Document.",
+          "language": "en",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 8,
+          "source_excerpt": "2.1 Requirement for tender participation ... e) Tenderers to supply ALL required items based on scope of works mentioned in Section 1.1 in RFP Document. ... [Failure to comply with any of the above criteria will result in unsuccessful bid for the tender].",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "scope_compliance",
+            "operator": "==",
+            "value": "full",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-006",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Sample packaging method for (i) and (ii) above to be submitted together with tender documents",
+          "language": "en",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 5,
+          "source_excerpt": "Remarks: ... b) Sample packaging method for (i) and (ii) above to be submitted together with tender documents",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "packaging_samples",
+            "operator": "submitted",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-007",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Each part (Part 1, Part 2 and Part 3) of the tender proposal is to be submitted together in three (3) separate envelopes.",
+          "language": "en",
+          "category": "submission_instructions",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 9,
+          "source_excerpt": "2.3 Submission of Proposal ... c) Each part (Part 1, Part 2 and Part 3) of the tender proposal is to be submitted together in three (3) separate envelopes.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "envelope_system",
+            "operator": "==",
+            "value": "3_envelopes",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-008",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": "RULE_DATE_VALIDITY",
+        "inputs": {
+          "field": "submission_deadline",
+          "tender_closing_date": "2021-06-04"
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Tender closing date (2021-06-04) is a submission deadline instruction requiring timely bid submission."
+        },
+        "tender_condition": {
+          "original_text": "The closing date and time of this tender is on Friday, 4 June 2021 latest by 3:00 p.m. Tender proposals received after the closing date and time shall be invalid and will not be considered.",
+          "language": "en",
+          "category": "submission_instructions",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 10,
+          "source_excerpt": "2.3 Submission of Proposal ... h) Closing date and validity period of tender proposal: ... The closing date and time of this tender is on Friday, 4 June 2021 latest by 3:00 p.m.",
+          "structured_condition": {
+            "rule_type": "date_validity",
+            "field": "submission_deadline",
+            "operator": "<=",
+            "value": "2021-06-04",
+            "reference_date": "2021-06-04"
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: tender closing date (2021-06-04) is a submission deadline and requires human confirmation of timely submission."
+      },
+      {
+        "requirement_id": "REQ-009",
+        "status": "needs_review",
+        "is_disqualifying": true,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Tender proposals submitted by facsimile, e-mail, telex, telegram or any other means will NOT be considered or accepted.",
+          "language": "en",
+          "category": "submission_instructions",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 10,
+          "source_excerpt": "2.3 Submission of Proposal ... e) Tender proposals submitted by facsimile, e-mail, telex, telegram or any other means will NOT be considered or accepted.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "submission_method",
+            "operator": "==",
+            "value": "physical_tender_box",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-010",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {
+          "applies_to": "conditional"
+        },
+        "comparison": {
+          "evaluated": false,
+          "reason": "Needs Review: requirement is conditional (applies_to='conditional'); verify whether the condition applies to this bid and attach evidence if applicable."
+        },
+        "tender_condition": {
+          "original_text": "A declaration of Withdrawal from Tender Participation (Form X, Attachment 4) shall be submitted if tenderer(s) decide not to participate in this tender exercise after the collection of tender document.",
+          "language": "en",
+          "category": "mandatory_documents",
+          "mandatory_status": "conditional",
+          "applies_to": "conditional",
+          "source_page": 11,
+          "source_excerpt": "2.3 Submission of Proposal ... i) A declaration of Withdrawal from Tender Participation (Form X, Attachment 4) shall be submitted if tenderer(s) decide not to participate",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "withdrawal_form",
+            "operator": "submitted_if_withdrawing",
+            "value": "Form X",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Needs Review: requirement is conditional (applies_to='conditional'); verify whether the condition applies to this bid and attach evidence if applicable."
+      },
+      {
+        "requirement_id": "REQ-011",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "The successful tenderer shall enter into a service agreement with the Bank. The provisions relating to the limit of liability and delay and liquidated damages are non-negotiable",
+          "language": "en",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 12,
+          "source_excerpt": "2.5 Form of Agreement ... a) The successful tenderer shall enter into a service agreement with the Bank.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "service_agreement",
+            "operator": "must_sign",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-012",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "The Bank only effects payment via electronic means. Hence, the successful Tenderer is required to state the details of the company’s bank and account number to BNM",
+          "language": "en",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 12,
+          "source_excerpt": "2.6 Payment ... a) i. The Bank only effects payment via electronic means.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "payment_method",
+            "operator": "==",
+            "value": "e-payment",
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-013",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Successful Tenderer must submit its current bank account’s statement for purposes of creating the e-payment account with BNM.",
+          "language": "en",
+          "category": "mandatory_documents",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 12,
+          "source_excerpt": "2.6 Payment ... b) Successful Tenderer must submit its current bank account’s statement",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "bank_statement_for_epayment",
+            "operator": "submitted",
+            "value": true,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      },
+      {
+        "requirement_id": "REQ-014",
+        "status": "needs_review",
+        "is_disqualifying": false,
+        "rule_id": null,
+        "inputs": {},
+        "comparison": {
+          "evaluated": false,
+          "reason": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+        },
+        "tender_condition": {
+          "original_text": "Assessment of performance of the Company is based on ... minimum Key Performance Indicator (KPI) of at least 85%.",
+          "language": "en",
+          "category": "other",
+          "mandatory_status": "mandatory",
+          "applies_to": "prime_bidder",
+          "source_page": 6,
+          "source_excerpt": "1.2 Compliance to Service Level Standards ... a) ... minimum Key Performance Indicator (KPI) of at least 85%.",
+          "structured_condition": {
+            "rule_type": "non_structured",
+            "field": "kpi_threshold",
+            "operator": ">=",
+            "value": 85,
+            "reference_date": null
+          }
+        },
+        "company_evidence": null,
+        "missing_evidence_marker": null,
+        "user_resolution": null,
+        "explanation": "Non-structured, conditional, or review-flagged requirement requires human review and evidence attachment."
+      }
+    ]
+  }
+}
