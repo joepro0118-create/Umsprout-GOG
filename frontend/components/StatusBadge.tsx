@@ -1,11 +1,5 @@
 import { ComplianceStatus, STATUS_LABELS } from "@/lib/types";
-import {
-  AlertExclamationIcon,
-  CheckIcon,
-  MinusIcon,
-  PaperclipIcon,
-  XIcon,
-} from "./Icons";
+import { CheckIcon, MinusIcon, PaperclipIcon, XIcon } from "./Icons";
 
 interface StatusBadgeProps {
   status: ComplianceStatus;
@@ -16,7 +10,7 @@ export function StatusBadge({ status }: StatusBadgeProps) {
 
   if (status === "gap") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-md bg-[#C0261A] px-2 py-0.5 text-[12px] font-semibold leading-5 text-white whitespace-nowrap">
+      <span className="inline-flex items-center gap-1 rounded-[6px] bg-[var(--tm-gap)] px-2 py-0.5 text-xs font-medium leading-5 text-white whitespace-nowrap">
         <XIcon className="h-3 w-3 shrink-0" />
         <span>{label}</span>
       </span>
@@ -25,8 +19,11 @@ export function StatusBadge({ status }: StatusBadgeProps) {
 
   if (status === "needs_review") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-md bg-[#FEF0C7] px-2 py-0.5 text-[12px] font-semibold leading-5 text-[#7A2E0E] whitespace-nowrap">
-        <AlertExclamationIcon className="h-3 w-3 shrink-0" />
+      <span className="inline-flex items-center gap-1.5 rounded-[6px] border border-[var(--tm-review-border)] bg-[var(--tm-review-soft)] px-2 py-0.5 text-xs font-medium leading-5 text-[var(--tm-review-text)] whitespace-nowrap">
+        <span
+          className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--tm-review)]"
+          aria-hidden="true"
+        />
         <span>{label}</span>
       </span>
     );
@@ -34,7 +31,7 @@ export function StatusBadge({ status }: StatusBadgeProps) {
 
   if (status === "matched_rule_verified") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-md bg-[#E7F6EC] px-2 py-0.5 text-[12px] font-semibold leading-5 text-[#05603A] whitespace-nowrap">
+      <span className="inline-flex items-center gap-1 rounded-[6px] border border-[var(--tm-rule-border)] bg-[var(--tm-rule-soft)] px-2 py-0.5 text-xs font-medium leading-5 text-[var(--tm-rule-text)] whitespace-nowrap">
         <CheckIcon className="h-3 w-3 shrink-0" />
         <span>{label}</span>
       </span>
@@ -45,7 +42,7 @@ export function StatusBadge({ status }: StatusBadgeProps) {
     return (
       <span
         title="User attestation with attached evidence (not rule-verified)"
-        className="inline-flex items-center gap-1 rounded-md border border-dashed border-[#1D4ED8] bg-[#EFF4FF] px-2 py-0.5 text-[12px] font-semibold leading-5 text-[#1D4ED8] whitespace-nowrap"
+        className="inline-flex items-center gap-1 rounded-[6px] border border-dashed border-[var(--tm-accent-border)] bg-[var(--tm-accent-soft)] px-2 py-0.5 text-xs font-medium leading-5 text-[var(--tm-accent)] whitespace-nowrap"
       >
         <PaperclipIcon className="h-3 w-3 shrink-0" />
         <span>{label}</span>
@@ -54,7 +51,7 @@ export function StatusBadge({ status }: StatusBadgeProps) {
   }
 
   return (
-    <span className="inline-flex items-center gap-1 rounded-md bg-[#F2F4F7] px-2 py-0.5 text-[12px] font-semibold leading-5 text-[#475467] whitespace-nowrap">
+    <span className="inline-flex items-center gap-1 rounded-[6px] border border-[var(--tm-border)] bg-[var(--tm-raised)] px-2 py-0.5 text-xs font-medium leading-5 text-[var(--tm-text-secondary)] whitespace-nowrap">
       <MinusIcon className="h-3 w-3 shrink-0" />
       <span>{label}</span>
     </span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { ComplianceSummary, TenderMeta, formatDateShort } from "@/lib/types";
+import { ChevronRightIcon } from "./Icons";
 
 interface TenderListProps {
   tenders: TenderMeta[];
@@ -11,24 +12,36 @@ interface TenderListProps {
   onDismiss: (id: string) => void;
 }
 
-function TenderStatusPill({ status }: { status: TenderMeta["status"] }) {
+function TenderStatusLabel({ status }: { status: TenderMeta["status"] }) {
   if (status === "completed") {
     return (
-      <span className="inline-flex items-center rounded-md bg-[#E7F6EC] px-2 py-0.5 text-[11.5px] font-semibold text-[#05603A] whitespace-nowrap">
-        Completed
+      <span className="inline-flex items-center gap-1.5 text-xs text-[var(--tm-text-secondary)] whitespace-nowrap">
+        <span
+          className="h-1.5 w-1.5 rounded-full bg-[var(--tm-rule)]"
+          aria-hidden="true"
+        />
+        <span>Completed</span>
       </span>
     );
   }
   if (status === "processing") {
     return (
-      <span className="inline-flex items-center rounded-md bg-[#EFF4FF] px-2 py-0.5 text-[11.5px] font-semibold text-[#1D4ED8] whitespace-nowrap">
-        Processing
+      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--tm-accent)] whitespace-nowrap">
+        <span
+          className="h-1.5 w-1.5 rounded-full bg-[var(--tm-accent)]"
+          aria-hidden="true"
+        />
+        <span>Processing</span>
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center rounded-md bg-[#FEE4E2] px-2 py-0.5 text-[11.5px] font-semibold text-[#912018] whitespace-nowrap">
-      Failed
+    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--tm-gap-text)] whitespace-nowrap">
+      <span
+        className="h-1.5 w-1.5 rounded-full bg-[var(--tm-gap)]"
+        aria-hidden="true"
+      />
+      <span>Failed</span>
     </span>
   );
 }
@@ -45,58 +58,63 @@ export function TenderList({
 
   return (
     <aside className="tm-card overflow-hidden">
-      <div className="border-b border-[#E4E7EC] px-5 py-4">
-        <h2 className="text-[14px] font-semibold text-[#101828]">
+      <div className="flex items-center justify-between border-b border-[var(--tm-border)] px-5 py-4">
+        <h2 className="text-sm font-medium text-[var(--tm-text-primary)]">
           Recent analyses
         </h2>
+        {!loading && visibleTenders.length > 0 && (
+          <span className="font-mono text-xs text-[var(--tm-text-muted)]">
+            {visibleTenders.length}
+          </span>
+        )}
       </div>
 
       {loading ? (
         <div
-          className="divide-y divide-[#E4E7EC]"
+          className="divide-y divide-[var(--tm-border)]"
           aria-busy="true"
           aria-label="Loading recent analyses"
         >
           {[0, 1, 2].map((i) => (
-            <div key={i} className="p-5 space-y-2.5 animate-pulse">
+            <div key={i} className="p-5 space-y-2 animate-pulse">
               <div className="flex items-center justify-between gap-2">
-                <div className="h-4 w-44 rounded bg-[#E4E7EC]" />
-                <div className="h-5 w-16 rounded bg-[#E4E7EC]" />
+                <div className="h-4 w-44 rounded bg-[var(--tm-skeleton)]" />
+                <div className="h-4 w-16 rounded bg-[var(--tm-skeleton-soft)]" />
               </div>
-              <div className="h-3 w-36 rounded bg-[#F2F4F7]" />
-              <div className="h-3 w-48 rounded bg-[#F2F4F7]" />
+              <div className="h-3 w-36 rounded bg-[var(--tm-skeleton-soft)]" />
+              <div className="h-3 w-48 rounded bg-[var(--tm-skeleton-soft)]" />
             </div>
           ))}
         </div>
       ) : visibleTenders.length === 0 ? (
-        <div className="px-5 py-8 text-center text-[13px] text-[#667085]">
-          No analyses yet. Upload a tender PDF to begin.
+        <div className="px-5 py-10 text-center text-[13px] text-[var(--tm-text-muted)]">
+          No analyses yet · upload a tender PDF to begin
         </div>
       ) : (
-        <ul className="divide-y divide-[#E4E7EC]" aria-live="polite">
+        <ul className="divide-y divide-[var(--tm-border)]" aria-live="polite">
           {visibleTenders.map((t) => {
             const summary = summaries[t.id];
 
             if (t.status === "failed") {
               return (
                 <li key={t.id} className="px-5 py-4 space-y-2">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="font-semibold text-[13.5px] text-[#101828] break-words">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="font-medium text-sm text-[var(--tm-text-primary)] break-words">
                       {t.title}
                     </div>
-                    <TenderStatusPill status="failed" />
+                    <TenderStatusLabel status="failed" />
                   </div>
-                  <div className="font-mono text-[11.5px] text-[#667085] break-words">
+                  <div className="font-mono text-xs text-[var(--tm-text-muted)] break-words">
                     {t.id} · {formatDateShort(t.created_at)}
                   </div>
-                  <p className="text-[12.5px] text-[#667085] leading-relaxed break-words">
+                  <p className="text-xs text-[var(--tm-text-secondary)] leading-relaxed break-words">
                     {t.error || "Analysis failed. Please upload a clearer PDF."}
                   </p>
-                  <div className="pt-0.5">
+                  <div className="pt-1">
                     <button
                       type="button"
                       onClick={() => onDismiss(t.id)}
-                      className="text-[12.5px] font-medium text-[#667085] hover:text-[#101828] underline underline-offset-2"
+                      className="text-xs font-medium text-[var(--tm-text-secondary)] hover:text-[var(--tm-text-primary)] underline underline-offset-2"
                     >
                       Dismiss
                     </button>
@@ -111,25 +129,25 @@ export function TenderList({
                   <button
                     type="button"
                     onClick={() => onSelect(t.id)}
-                    className="w-full px-5 py-4 text-left transition-colors hover:bg-[#F9FAFB] space-y-2"
+                    className="w-full px-5 py-4 text-left transition-colors duration-150 hover:bg-[var(--tm-hover)] space-y-2"
                   >
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="font-semibold text-[13.5px] text-[#101828] break-words">
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="font-medium text-sm text-[var(--tm-text-primary)] break-words">
                         {t.title}
                       </span>
-                      <TenderStatusPill status="processing" />
+                      <TenderStatusLabel status="processing" />
                     </div>
-                    <div className="font-mono text-[11.5px] text-[#667085] break-words">
+                    <div className="font-mono text-xs text-[var(--tm-text-muted)] break-words">
                       {t.id} · {formatDateShort(t.created_at)}
                     </div>
                     <div
-                      className="h-1.5 w-full overflow-hidden rounded-full bg-[#E4E7EC]"
+                      className="h-1.5 w-full overflow-hidden rounded-full bg-[var(--tm-raised)]"
                       role="progressbar"
                       aria-label={`Processing ${t.title}`}
                     >
-                      <div className="h-full w-1/3 rounded-full bg-[#2457D6] tm-progress-indeterminate" />
+                      <div className="h-full w-1/3 rounded-full bg-[var(--tm-accent)] tm-progress-indeterminate" />
                     </div>
-                    <p className="text-[12.5px] text-[#667085]">
+                    <p className="text-xs text-[var(--tm-text-muted)]">
                       Reading pages and extracting requirements…
                     </p>
                   </button>
@@ -143,32 +161,35 @@ export function TenderList({
                 <button
                   type="button"
                   onClick={() => onSelect(t.id)}
-                  className="w-full px-5 py-4 text-left transition-colors hover:bg-[#F9FAFB] space-y-1.5"
+                  className="group flex w-full items-start justify-between gap-3 px-5 py-4 text-left transition-colors duration-150 hover:bg-[var(--tm-hover)]"
                 >
-                  <div className="flex items-start justify-between gap-2">
-                    <span className="font-semibold text-[13.5px] text-[#101828] break-words">
-                      {t.title}
-                    </span>
-                    <TenderStatusPill status="completed" />
+                  <div className="min-w-0 flex-1 space-y-1.5">
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="font-medium text-sm text-[var(--tm-text-primary)] group-hover:text-[var(--tm-accent)] transition-colors duration-150 break-words">
+                        {t.title}
+                      </span>
+                      <TenderStatusLabel status="completed" />
+                    </div>
+                    <div className="font-mono text-xs text-[var(--tm-text-muted)] break-words">
+                      {t.id} · {formatDateShort(t.completed_at || t.created_at)}
+                    </div>
+                    {summary && (
+                      <p
+                        className={`text-xs ${
+                          summary.disqualifying_gaps > 0
+                            ? "font-medium text-[var(--tm-gap-text)]"
+                            : "text-[var(--tm-text-secondary)]"
+                        }`}
+                      >
+                        {summary.disqualifying_gaps}{" "}
+                        {summary.disqualifying_gaps === 1
+                          ? "disqualifying gap"
+                          : "disqualifying gaps"}{" "}
+                        · {summary.needs_review} need review
+                      </p>
+                    )}
                   </div>
-                  <div className="font-mono text-[11.5px] text-[#667085] break-words">
-                    {t.id} · {formatDateShort(t.completed_at || t.created_at)}
-                  </div>
-                  {summary && (
-                    <p
-                      className={`text-[12.5px] font-medium ${
-                        summary.disqualifying_gaps > 0
-                          ? "text-[#912018]"
-                          : "text-[#667085]"
-                      }`}
-                    >
-                      {summary.disqualifying_gaps}{" "}
-                      {summary.disqualifying_gaps === 1
-                        ? "disqualifying gap"
-                        : "disqualifying gaps"}{" "}
-                      · {summary.needs_review} need review
-                    </p>
-                  )}
+                  <ChevronRightIcon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--tm-text-muted)] opacity-0 transition-opacity duration-150 group-hover:opacity-100" />
                 </button>
               </li>
             );

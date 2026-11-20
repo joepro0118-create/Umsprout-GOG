@@ -145,8 +145,7 @@ export function RequirementTable({
     return true;
   });
 
-  const shouldCollapseRuleChecked =
-    activeTab === "all" && !showRuleChecked;
+  const shouldCollapseRuleChecked = activeTab === "all" && !showRuleChecked;
 
   const nonRuleCheckedRows = shouldCollapseRuleChecked
     ? filteredRows.filter(
@@ -169,7 +168,7 @@ export function RequirementTable({
       className="tm-card overflow-hidden"
     >
       {/* Tabs + Tier B filter */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E4E7EC] px-4 pt-2">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--tm-border)] px-5 pt-2">
         <div
           role="tablist"
           aria-label="Filter requirements by status"
@@ -184,18 +183,18 @@ export function RequirementTable({
                 role="tab"
                 aria-selected={isSelected}
                 onClick={() => setActiveTab(t.id)}
-                className={`inline-flex items-center gap-1.5 border-b-2 px-3 py-2.5 text-[13px] font-medium transition-colors ${
+                className={`inline-flex h-10 items-center gap-2 border-b-2 px-3 text-[13px] transition-[color,border-color] duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   isSelected
-                    ? "border-[#2457D6] text-[#101828] font-semibold"
-                    : "border-transparent text-[#667085] hover:text-[#101828]"
+                    ? "border-[var(--tm-accent)] font-medium text-[var(--tm-text-primary)]"
+                    : "border-transparent font-normal text-[var(--tm-text-secondary)] hover:text-[var(--tm-text-primary)]"
                 }`}
               >
                 <span>{t.label}</span>
                 <span
-                  className={`rounded-full px-1.5 py-0.2 text-[11.5px] ${
+                  className={`font-mono text-xs tabular-nums ${
                     isSelected
-                      ? "bg-[#EFF4FF] text-[#2457D6] font-semibold"
-                      : "bg-[#F2F4F7] text-[#667085]"
+                      ? "text-[var(--tm-accent)] font-medium"
+                      : "text-[var(--tm-text-muted)]"
                   }`}
                 >
                   {t.count}
@@ -205,19 +204,19 @@ export function RequirementTable({
           })}
         </div>
 
-        <label className="inline-flex cursor-pointer items-center gap-2 pb-2 text-[13px] font-medium text-[#344054] select-none">
+        <label className="inline-flex h-8 cursor-pointer items-center gap-2 pb-1 text-[13px] text-[var(--tm-text-secondary)] hover:text-[var(--tm-text-primary)] select-none transition-colors duration-150">
           <input
             type="checkbox"
             checked={tierBOnly}
             onChange={(e) => setTierBOnly(e.target.checked)}
-            className="h-4 w-4 rounded border-[#D0D5DD] accent-[#2457D6]"
+            className="h-4 w-4 rounded-[4px] border-[var(--tm-border-strong)] accent-[var(--tm-accent)]"
           />
           <span>Tier B only</span>
         </label>
       </div>
 
-      {/* Desktop Column Headers */}
-      <div className="hidden md:grid md:grid-cols-[144px_minmax(0,1fr)_168px_76px_74px] md:gap-3 border-b border-[#E4E7EC] bg-[#F9FAFB] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-wider text-[#667085]">
+      {/* Desktop Column Headers — sentence case */}
+      <div className="hidden md:grid md:grid-cols-[152px_minmax(0,1fr)_168px_80px_76px] md:gap-4 border-b border-[var(--tm-border)] bg-[var(--tm-surface-subtle)] px-5 py-3 text-xs font-medium text-[var(--tm-text-muted)]">
         <div>Status</div>
         <div>Requirement</div>
         <div>Category</div>
@@ -227,52 +226,52 @@ export function RequirementTable({
 
       {/* Rows */}
       <div role="tabpanel" aria-label="Filtered requirements">
-      {totalInScope === 0 ? (
-        <div className="px-6 py-10 text-center text-[13.5px] text-[#667085]">
-          No requirements match the current filter.
-        </div>
-      ) : (
-        <div>
-          {nonRuleCheckedRows.map(({ result, requirement }) => (
-            <RequirementRow
-              key={result.requirement_id}
-              tenderId={tenderId}
-              requirement={requirement}
-              result={result}
-              lowQualityPages={lowQualityPages}
-              defaultAttester={defaultAttester}
-              expanded={expandedIds.has(result.requirement_id)}
-              onToggle={() => toggleRow(result.requirement_id)}
-              onResolved={onResolved}
-            />
-          ))}
+        {totalInScope === 0 ? (
+          <div className="px-6 py-12 text-center text-sm text-[var(--tm-text-muted)]">
+            No requirements match the current filter
+          </div>
+        ) : (
+          <div>
+            {nonRuleCheckedRows.map(({ result, requirement }) => (
+              <RequirementRow
+                key={result.requirement_id}
+                tenderId={tenderId}
+                requirement={requirement}
+                result={result}
+                lowQualityPages={lowQualityPages}
+                defaultAttester={defaultAttester}
+                expanded={expandedIds.has(result.requirement_id)}
+                onToggle={() => toggleRow(result.requirement_id)}
+                onResolved={onResolved}
+              />
+            ))}
 
-          {/* Collapsed Rule-checked toggle row */}
-          {collapsedRuleCheckedCount > 0 && (
-            <div className="border-t border-[#E4E7EC] bg-[#F9FAFB]/60">
-              <button
-                type="button"
-                onClick={() => setShowRuleChecked(true)}
-                aria-expanded={false}
-                className="flex w-full items-center gap-2 px-4 py-3 text-left text-[13px] font-medium text-[#2457D6] hover:bg-[#F2F4F7]/70 transition-colors"
-              >
-                <ChevronRightIcon className="h-4 w-4 shrink-0" />
-                <span>
-                  Show {collapsedRuleCheckedCount}{" "}
-                  {collapsedRuleCheckedCount === 1
-                    ? "rule-checked item"
-                    : "rule-checked items"}
-                </span>
-              </button>
-            </div>
-          )}
-        </div>
-      )}
+            {/* Collapsed Rule-checked toggle row */}
+            {collapsedRuleCheckedCount > 0 && (
+              <div className="border-t border-[var(--tm-border)] bg-[var(--tm-surface-subtle)]">
+                <button
+                  type="button"
+                  onClick={() => setShowRuleChecked(true)}
+                  aria-expanded={false}
+                  className="flex h-11 w-full items-center gap-2 px-5 text-left text-[13px] font-medium text-[var(--tm-accent)] transition-colors duration-150 hover:bg-[var(--tm-raised)]"
+                >
+                  <ChevronRightIcon className="h-4 w-4 shrink-0" />
+                  <span>
+                    Show {collapsedRuleCheckedCount}{" "}
+                    {collapsedRuleCheckedCount === 1
+                      ? "rule-checked item"
+                      : "rule-checked items"}
+                  </span>
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Footer Row */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#E4E7EC] bg-[#F9FAFB] px-4 py-2.5 text-[12.5px] text-[#667085]">
-        <span>
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[var(--tm-border)] bg-[var(--tm-surface-subtle)] px-5 py-3 text-xs text-[var(--tm-text-muted)]">
+        <span className="font-mono">
           Showing {visibleCount} of {totalInScope} · sorted by severity
         </span>
 
@@ -283,7 +282,7 @@ export function RequirementTable({
               type="button"
               onClick={() => setShowRuleChecked(false)}
               aria-pressed={true}
-              className="inline-flex items-center gap-1 font-medium text-[#2457D6] hover:underline"
+              className="inline-flex items-center gap-1 font-medium text-[var(--tm-accent)] hover:underline"
             >
               <ChevronDownIcon className="h-3.5 w-3.5" />
               <span>Collapse rule-checked</span>
@@ -294,7 +293,7 @@ export function RequirementTable({
                 type="button"
                 onClick={() => setShowRuleChecked(true)}
                 aria-pressed={false}
-                className="font-medium text-[#2457D6] hover:underline"
+                className="font-medium text-[var(--tm-accent)] hover:underline"
               >
                 Show all
               </button>

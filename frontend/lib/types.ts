@@ -245,9 +245,12 @@ export function formatDocumentType(docType: string): string {
     ssm_certificate: "SSM",
     ssm_registration: "SSM",
     paid_up_capital: "Paid-up capital",
-    financial_statement: "Paid-up capital",
+    paid_up_capital_statement: "Paid-up capital",
+    financial_statement: "Financial statement",
   };
-  return labels[docType] || docType.replaceAll("_", " ");
+  if (labels[docType]) return labels[docType];
+  const spaced = docType.replaceAll("_", " ");
+  return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
 
 export function formatLanguages(requirements: ExtractedRequirement[]): string {

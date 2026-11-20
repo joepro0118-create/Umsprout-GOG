@@ -7,7 +7,7 @@ import {
   extractErrorMessage,
   formatFileSize,
 } from "@/lib/types";
-import { FilePdfIcon, XIcon } from "./Icons";
+import { FilePdfIcon, PaperclipIcon, XIcon } from "./Icons";
 
 const MAX_BYTES = 25 * 1024 * 1024;
 
@@ -53,12 +53,12 @@ export function ResolveForm({
       candidate.type === "application/pdf" ||
       candidate.name.toLowerCase().endsWith(".pdf");
     if (!isPdf) {
-      setError("Evidence must be a PDF file (.pdf).");
+      setError("Evidence must be a PDF file (.pdf)");
       resetFile();
       return;
     }
     if (candidate.size > MAX_BYTES) {
-      setError("Evidence file exceeds the 25 MB limit.");
+      setError("Evidence file exceeds the 25 MB limit");
       resetFile();
       return;
     }
@@ -83,7 +83,7 @@ export function ResolveForm({
       return;
     }
     if (!attestedBy.trim()) {
-      setError("Name of the person attesting is required.");
+      setError("Name of the person attesting is required");
       return;
     }
 
@@ -105,7 +105,7 @@ export function ResolveForm({
       if (!resp.ok) {
         const msg = await extractErrorMessage(
           resp,
-          "Could not mark requirement as satisfied."
+          "Could not mark requirement as satisfied"
         );
         setError(msg);
         return;
@@ -116,14 +116,16 @@ export function ResolveForm({
       setNote("");
       onResolved(data);
     } catch {
-      setError("Network error while uploading evidence. Check that the backend is running.");
+      setError(
+        "Network error while uploading evidence. Check that the backend is running."
+      );
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
+    <form onSubmit={handleSubmit} className="space-y-4 pt-1">
       {/* Dashed PDF upload area */}
       <div
         onDrop={handleDrop}
@@ -149,12 +151,12 @@ export function ResolveForm({
           }
         }}
         aria-label={file ? undefined : "Attach supporting PDF evidence"}
-        className={`rounded-lg border-[1.5px] border-dashed px-4 py-3.5 text-center transition-colors ${
+        className={`rounded-[10px] border border-dashed px-4 py-3 text-center transition-[color,background-color,border-color] duration-150 ${
           isDragging
-            ? "border-[#2457D6] bg-[#EFF4FF]"
+            ? "border-[var(--tm-accent)] bg-[var(--tm-accent-soft)]"
             : file
-              ? "border-[#2457D6]/40 bg-[#F8FAFC]"
-              : "border-[#CBD5E1] bg-white hover:border-[#94A3B8] cursor-pointer"
+              ? "border-[var(--tm-border-dashed)] bg-[var(--tm-surface)]"
+              : "border-[var(--tm-border-dashed)] bg-[var(--tm-surface)] hover:border-[var(--tm-border-dashed-hover)] cursor-pointer"
         }`}
       >
         <input
@@ -167,22 +169,25 @@ export function ResolveForm({
         />
 
         {!file ? (
-          <p className="text-[13px] text-[#667085]">
-            <strong className="font-semibold text-[#101828]">
-              Attach evidence
-            </strong>{" "}
-            · PDF only, up to 25 MB
-          </p>
+          <div className="inline-flex items-center gap-2 text-[13px] text-[var(--tm-text-secondary)]">
+            <PaperclipIcon className="h-4 w-4 text-[var(--tm-text-muted)]" />
+            <span>
+              <span className="font-medium text-[var(--tm-text-primary)]">
+                Attach supporting PDF
+              </span>{" "}
+              · up to 25 MB
+            </span>
+          </div>
         ) : (
           <div className="flex flex-wrap items-center justify-between gap-2 text-left">
             <div className="flex items-center gap-2.5 min-w-0">
-              <FilePdfIcon className="h-4 w-4 shrink-0 text-[#2457D6]" />
+              <FilePdfIcon className="h-4 w-4 shrink-0 text-[var(--tm-accent)]" />
               <div className="min-w-0">
-                <span className="font-mono text-[12.5px] font-medium text-[#101828] break-words">
+                <span className="font-mono text-xs font-medium text-[var(--tm-text-primary)] break-words">
                   {file.name}
                 </span>
-                <span className="ml-2 text-[12px] text-[#667085]">
-                  ({formatFileSize(file.size)})
+                <span className="ml-2 font-mono text-xs text-[var(--tm-text-muted)]">
+                  {formatFileSize(file.size)}
                 </span>
               </div>
             </div>
@@ -190,9 +195,9 @@ export function ResolveForm({
               type="button"
               onClick={() => resetFile()}
               aria-label="Remove attached evidence file"
-              className="inline-flex items-center gap-1 rounded-md border border-[#E4E7EC] bg-white px-2 py-1 text-[12px] font-medium text-[#912018] hover:bg-[#FEF3F2]"
+              className="inline-flex h-7 items-center gap-1 rounded-[6px] border border-[var(--tm-border-strong)] bg-[var(--tm-surface)] px-2 text-xs font-medium text-[var(--tm-gap-text)] transition-colors duration-150 hover:bg-[var(--tm-gap-soft)]"
             >
-              <XIcon className="h-3 w-3" />
+              <XIcon className="h-3.5 w-3.5" />
               <span>Remove</span>
             </button>
           </div>
@@ -204,7 +209,7 @@ export function ResolveForm({
         <div>
           <label
             htmlFor={attesterInputId}
-            className="block text-[12px] font-medium text-[#344054]"
+            className="block text-xs font-medium text-[var(--tm-text-secondary)]"
           >
             Attested by
           </label>
@@ -213,16 +218,16 @@ export function ResolveForm({
             type="text"
             value={attestedBy}
             onChange={(e) => setAttestedBy(e.target.value)}
-            placeholder="Your full name"
+            placeholder="Full name"
             required
-            className="mt-1 block w-full rounded-lg border border-[#D0D5DD] bg-white px-3 py-1.5 text-[13px] text-[#101828] placeholder:text-[#98A2B3] focus:border-[#2457D6]"
+            className="mt-1.5 block h-9 w-full rounded-[8px] border border-[var(--tm-border-strong)] bg-[var(--tm-surface)] px-3 text-[13px] text-[var(--tm-text-primary)] placeholder:text-[var(--tm-text-muted)] transition-colors duration-150 focus:border-[var(--tm-accent)]"
           />
         </div>
 
         <div>
           <label
             htmlFor={noteInputId}
-            className="block text-[12px] font-medium text-[#344054]"
+            className="block text-xs font-medium text-[var(--tm-text-secondary)]"
           >
             Note (optional)
           </label>
@@ -232,14 +237,14 @@ export function ResolveForm({
             value={note}
             onChange={(e) => setNote(e.target.value)}
             placeholder="Signed JKR attendance slip"
-            className="mt-1 block w-full rounded-lg border border-[#D0D5DD] bg-white px-3 py-1.5 text-[13px] text-[#101828] placeholder:text-[#98A2B3] focus:border-[#2457D6]"
+            className="mt-1.5 block h-9 w-full rounded-[8px] border border-[var(--tm-border-strong)] bg-[var(--tm-surface)] px-3 text-[13px] text-[var(--tm-text-primary)] placeholder:text-[var(--tm-text-muted)] transition-colors duration-150 focus:border-[var(--tm-accent)]"
           />
         </div>
 
         <button
           type="submit"
           disabled={!file || submitting}
-          className="inline-flex items-center justify-center rounded-lg bg-[#2457D6] px-4 py-1.5 h-[34px] text-[13px] font-semibold text-white whitespace-nowrap transition-colors hover:bg-[#1D46B0] disabled:cursor-not-allowed disabled:bg-[#2457D6]/45"
+          className="inline-flex h-9 items-center justify-center rounded-[8px] bg-[var(--tm-btn-primary-bg)] px-4 text-[13px] font-medium text-[var(--tm-btn-primary-text)] whitespace-nowrap transition-[color,background-color,transform] duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--tm-btn-primary-hover)] active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-[var(--tm-btn-primary-disabled)] disabled:active:scale-100"
         >
           {submitting ? "Attaching…" : "Confirm and attach"}
         </button>
@@ -248,14 +253,14 @@ export function ResolveForm({
       {error && (
         <div
           role="alert"
-          className="rounded-lg border border-[#FDA29B] bg-[#FEF3F2] px-3 py-2 text-[12.5px] font-medium text-[#912018]"
+          className="rounded-[8px] border border-[var(--tm-gap-border)] bg-[var(--tm-gap-soft)] px-3 py-2 text-xs font-medium text-[var(--tm-gap-text)]"
         >
           {error}
         </div>
       )}
 
-      <p className="text-[12px] text-[#667085]">
-        Saved as a user attestation with your name, time and file. Not rule-verified.
+      <p className="text-xs text-[var(--tm-text-muted)]">
+        Saved as a user attestation with your name, time and file · not rule-verified
       </p>
     </form>
   );

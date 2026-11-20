@@ -3,7 +3,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { AppShell, NavSection } from "@/components/AppShell";
 import { CompanyView } from "@/components/CompanyView";
-import { ArrowUpRightIcon } from "@/components/Icons";
+import {
+  ArrowUpRightIcon,
+  DownloadIcon,
+  PlusIcon,
+  WarningIcon,
+} from "@/components/Icons";
 import { RequirementTable } from "@/components/RequirementTable";
 import { SummaryPanel } from "@/components/SummaryPanel";
 import { TenderList } from "@/components/TenderList";
@@ -144,7 +149,7 @@ export default function HomePage() {
           setApiError(
             err instanceof Error
               ? err.message
-              : "Failed to fetch tender status."
+              : "Failed to fetch tender status"
           );
         }
       }
@@ -258,7 +263,7 @@ export default function HomePage() {
       });
 
       if (!resp.ok) {
-        const msg = await extractErrorMessage(resp, "Upload failed.");
+        const msg = await extractErrorMessage(resp, "Upload failed");
         setUploadError(msg);
         return false;
       }
@@ -337,20 +342,20 @@ export default function HomePage() {
       loadingProfile={initialLoading}
       apiError={apiError}
     >
-      {/* Initial Loading Skeleton (prevents flash of empty upload state) */}
+      {/* Initial Loading Skeleton */}
       {initialLoading ? (
         <div
-          className="space-y-5 animate-pulse"
+          className="space-y-6 animate-pulse"
           aria-busy="true"
           aria-label="Loading TenderMate workspace"
         >
           <div className="space-y-2">
-            <div className="h-7 w-72 rounded bg-[#E4E7EC]" />
-            <div className="h-4 w-96 max-w-full rounded bg-[#E4E7EC]" />
+            <div className="h-7 w-72 rounded bg-[var(--tm-skeleton)]" />
+            <div className="h-4 w-96 max-w-full rounded bg-[var(--tm-skeleton-soft)]" />
           </div>
           <div className="tm-card p-6 space-y-4">
-            <div className="h-36 w-full rounded-xl bg-[#F2F4F7]" />
-            <div className="h-10 w-full rounded-lg bg-[#F2F4F7]" />
+            <div className="h-40 w-full rounded-[10px] bg-[var(--tm-skeleton-soft)]" />
+            <div className="h-10 w-full rounded-[8px] bg-[var(--tm-skeleton-soft)]" />
           </div>
         </div>
       ) : (
@@ -360,237 +365,265 @@ export default function HomePage() {
             <CompanyView profile={profile} loading={initialLoading} />
           )}
 
-          {/* Upload View */}
+          {/* Upload View — page header above balanced 12-column desktop split */}
           {view === "upload" && (
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="flex-1 min-w-0 w-full">
-                <UploadZone
-                  onUpload={handleUpload}
-                  uploading={uploading}
-                  error={uploadError}
-                  onClearError={() => setUploadError(null)}
-                />
+            <div className="space-y-6">
+              <div>
+                <h1 className="text-2xl font-medium text-[var(--tm-text-primary)] leading-[1.2]">
+                  New tender analysis
+                </h1>
+                <p className="mt-2 text-sm text-[var(--tm-text-secondary)] leading-relaxed max-w-[600px]">
+                  Upload a tender PDF to extract every mandatory requirement with
+                  its page citation, check it against your confirmed profile, and
+                  flag disqualifying gaps.
+                </p>
               </div>
-              <div className="w-full md:w-[360px] shrink-0">
-                <TenderList
-                  tenders={tenders}
-                  summaries={summaries}
-                  dismissedIds={dismissedIds}
-                  loading={initialLoading}
-                  onSelect={handleSelectTender}
-                  onDismiss={handleDismissFailed}
-                />
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div className="lg:col-span-7 min-w-0">
+                  <UploadZone
+                    onUpload={handleUpload}
+                    uploading={uploading}
+                    error={uploadError}
+                    onClearError={() => setUploadError(null)}
+                  />
+                </div>
+                <div className="lg:col-span-5 min-w-0">
+                  <TenderList
+                    tenders={tenders}
+                    summaries={summaries}
+                    dismissedIds={dismissedIds}
+                    loading={initialLoading}
+                    onSelect={handleSelectTender}
+                    onDismiss={handleDismissFailed}
+                  />
+                </div>
               </div>
             </div>
           )}
 
           {/* Tender Review View */}
           {view === "review" && (
-        <div className="space-y-5">
-          {loadingDetail && !detail ? (
-            <div
-              className="space-y-5 animate-pulse"
-              aria-busy="true"
-              aria-label="Loading tender review"
-            >
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div className="space-y-2">
-                  <div className="h-7 w-72 rounded bg-[#E4E7EC]" />
-                  <div className="h-4 w-56 rounded bg-[#E4E7EC]" />
+            <div className="space-y-6">
+              {loadingDetail && !detail ? (
+                <div
+                  className="space-y-6 animate-pulse"
+                  aria-busy="true"
+                  aria-label="Loading tender review"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="space-y-2">
+                      <div className="h-7 w-72 rounded bg-[var(--tm-skeleton)]" />
+                      <div className="h-4 w-56 rounded bg-[var(--tm-skeleton-soft)]" />
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="h-9 w-36 rounded-[8px] bg-[var(--tm-skeleton-soft)]" />
+                      <div className="h-9 w-28 rounded-[8px] bg-[var(--tm-skeleton-soft)]" />
+                      <div className="h-9 w-36 rounded-[8px] bg-[var(--tm-skeleton)]" />
+                    </div>
+                  </div>
+                  <div className="tm-card p-6 space-y-4">
+                    <div className="grid grid-cols-4 gap-4">
+                      <div className="h-14 rounded bg-[var(--tm-skeleton-soft)]" />
+                      <div className="h-14 rounded bg-[var(--tm-skeleton-soft)]" />
+                      <div className="h-14 rounded bg-[var(--tm-skeleton-soft)]" />
+                      <div className="h-14 rounded bg-[var(--tm-skeleton-soft)]" />
+                    </div>
+                    <div className="h-2 w-full rounded-full bg-[var(--tm-skeleton)]" />
+                  </div>
+                  <div className="tm-card p-6 space-y-3">
+                    <div className="h-8 w-full rounded bg-[var(--tm-skeleton-soft)]" />
+                    <div className="h-12 w-full rounded bg-[var(--tm-skeleton-soft)]" />
+                    <div className="h-12 w-full rounded bg-[var(--tm-skeleton-soft)]" />
+                    <div className="h-12 w-full rounded bg-[var(--tm-skeleton-soft)]" />
+                  </div>
                 </div>
-                <div className="flex gap-2">
-                  <div className="h-9 w-36 rounded-lg bg-[#E4E7EC]" />
-                  <div className="h-9 w-28 rounded-lg bg-[#E4E7EC]" />
-                  <div className="h-9 w-36 rounded-lg bg-[#E4E7EC]" />
-                </div>
-              </div>
-              <div className="tm-card p-5 space-y-3">
-                <div className="h-5 w-96 max-w-full rounded bg-[#E4E7EC]" />
-                <div className="h-2.5 w-full rounded-full bg-[#E4E7EC]" />
-                <div className="h-4 w-80 max-w-full rounded bg-[#F2F4F7]" />
-              </div>
-              <div className="tm-card p-5 space-y-3">
-                <div className="h-8 w-full rounded bg-[#F2F4F7]" />
-                <div className="h-12 w-full rounded bg-[#F2F4F7]" />
-                <div className="h-12 w-full rounded bg-[#F2F4F7]" />
-                <div className="h-12 w-full rounded bg-[#F2F4F7]" />
-              </div>
-            </div>
-          ) : detail ? (
-            <>
-              {/* Tender Header */}
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <h1 className="text-[22px] font-bold tracking-tight text-[#101828] break-words">
-                    {detail.tender.title}
-                  </h1>
-                  <p className="mt-1 text-[13px] text-[#667085]">
-                    {detail.extraction ? (
-                      <>
-                        {detail.extraction.page_count}{" "}
-                        {detail.extraction.page_count === 1 ? "page" : "pages"}{" "}
-                        · {formatLanguages(detail.extraction.requirements)} ·{" "}
-                        analysed{" "}
-                        {formatDateShort(
-                          detail.assessment?.evaluated_at ||
-                            detail.tender.completed_at ||
-                            detail.tender.created_at
+              ) : detail ? (
+                <>
+                  {/* Tender Header */}
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="min-w-0">
+                      <h1 className="text-2xl font-medium text-[var(--tm-text-primary)] leading-[1.2] break-words">
+                        {detail.tender.title}
+                      </h1>
+                      <p className="mt-2 text-[13px] text-[var(--tm-text-secondary)]">
+                        {detail.extraction ? (
+                          <>
+                            <span className="font-mono text-xs text-[var(--tm-text-primary)]">
+                              {detail.extraction.page_count}{" "}
+                              {detail.extraction.page_count === 1
+                                ? "page"
+                                : "pages"}
+                            </span>{" "}
+                            · {formatLanguages(detail.extraction.requirements)}{" "}
+                            · analysed{" "}
+                            {formatDateShort(
+                              detail.assessment?.evaluated_at ||
+                                detail.tender.completed_at ||
+                                detail.tender.created_at
+                            )}
+                          </>
+                        ) : (
+                          <>
+                            <span className="font-mono text-xs text-[var(--tm-text-primary)]">
+                              {detail.tender.id}
+                            </span>{" "}
+                            · uploaded{" "}
+                            {formatDateShort(detail.tender.created_at)}
+                          </>
                         )}
-                      </>
-                    ) : (
-                      <>
-                        <span className="font-mono">{detail.tender.id}</span> ·{" "}
-                        uploaded {formatDateShort(detail.tender.created_at)}
-                      </>
-                    )}
-                  </p>
-                </div>
+                      </p>
+                    </div>
 
-                <div className="flex flex-wrap items-center gap-2 shrink-0">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={handleStartNewUpload}
+                        className="inline-flex h-9 items-center gap-1.5 rounded-[8px] border border-[var(--tm-border-strong)] bg-[var(--tm-surface)] px-3 text-[13px] font-medium text-[var(--tm-text-primary)] transition-[color,background-color,transform] duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--tm-raised)] active:scale-[0.98]"
+                      >
+                        <PlusIcon className="h-4 w-4 text-[var(--tm-text-muted)]" />
+                        <span>Upload new tender</span>
+                      </button>
+
+                      <a
+                        href={`${API_BASE}/api/tenders/${detail.tender.id}/pdf`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-9 items-center gap-1.5 rounded-[8px] border border-[var(--tm-border-strong)] bg-[var(--tm-surface)] px-3 text-[13px] font-medium text-[var(--tm-text-primary)] transition-[color,background-color,transform] duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--tm-raised)] active:scale-[0.98]"
+                      >
+                        <span>Source PDF</span>
+                        <ArrowUpRightIcon className="h-3.5 w-3.5 text-[var(--tm-text-muted)]" />
+                      </a>
+
+                      {detail.tender.status === "completed" && (
+                        <a
+                          href={`${API_BASE}/api/tenders/${detail.tender.id}/report.pdf`}
+                          className="inline-flex h-9 items-center gap-1.5 rounded-[8px] bg-[var(--tm-btn-primary-bg)] px-4 text-[13px] font-medium text-[var(--tm-btn-primary-text)] transition-[color,background-color,transform] duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[var(--tm-btn-primary-hover)] active:scale-[0.98]"
+                        >
+                          <DownloadIcon className="h-4 w-4" />
+                          <span>Export PDF report</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Processing State */}
+                  {detail.tender.status === "processing" && (
+                    <div aria-live="polite" className="tm-card p-6 space-y-4">
+                      <div className="flex items-center justify-between gap-2">
+                        <h2 className="text-sm font-medium text-[var(--tm-text-primary)]">
+                          Analysing tender PDF
+                        </h2>
+                        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--tm-accent)]">
+                          <span
+                            className="h-1.5 w-1.5 rounded-full bg-[var(--tm-accent)]"
+                            aria-hidden="true"
+                          />
+                          Processing
+                        </span>
+                      </div>
+                      <div
+                        className="h-2 w-full overflow-hidden rounded-full bg-[var(--tm-raised)]"
+                        role="progressbar"
+                        aria-label="Analysing tender PDF"
+                      >
+                        <div className="h-full w-1/3 rounded-full bg-[var(--tm-accent)] tm-progress-indeterminate" />
+                      </div>
+                      <p className="text-[13px] text-[var(--tm-text-secondary)]">
+                        Reading pages and extracting requirements… This page
+                        updates automatically every 2 seconds.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Failed State */}
+                  {detail.tender.status === "failed" && (
+                    <div
+                      role="alert"
+                      className="rounded-r-[10px] border border-[var(--tm-gap-border)] border-l-2 border-l-[var(--tm-gap)] bg-[var(--tm-gap-soft)] p-5 space-y-3 text-[var(--tm-gap-text)]"
+                    >
+                      <h2 className="text-sm font-medium">Analysis failed</h2>
+                      <p className="text-[13px] break-words">
+                        {detail.tender.error ||
+                          "Extraction failed. Please upload a clearer PDF."}
+                      </p>
+                      <div>
+                        <button
+                          type="button"
+                          onClick={handleStartNewUpload}
+                          className="inline-flex h-8 items-center rounded-[8px] border border-[var(--tm-gap-border)] bg-[var(--tm-surface)] px-3 text-xs font-medium text-[var(--tm-gap-text)] transition-colors duration-150 hover:bg-[var(--tm-gap-soft)]"
+                        >
+                          Upload another PDF
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Summary Panel */}
+                  {detail.assessment && (
+                    <SummaryPanel assessment={detail.assessment} />
+                  )}
+
+                  {/* Low-Quality / OCR Pages Callout — left dossier rule */}
+                  {lowQualityPages.length > 0 && (
+                    <div
+                      role="note"
+                      className="rounded-r-[10px] border border-[var(--tm-review-border)] border-l-2 border-l-[var(--tm-review)] bg-[var(--tm-review-soft)] px-4 py-3 text-[13px] text-[var(--tm-text-primary)] flex flex-wrap items-center gap-x-3 gap-y-1.5"
+                    >
+                      <WarningIcon className="h-4 w-4 shrink-0 text-[var(--tm-review)]" />
+                      <span className="text-[var(--tm-text-secondary)]">
+                        {lowQualityPages.length === 1
+                          ? `Page ${lowQualityPages[0]} is a scanned image read with OCR.`
+                          : `Pages ${lowQualityPages.join(", ")} are scanned images read with OCR.`}{" "}
+                        {lowQualityReqIds.length > 0
+                          ? `Check ${lowQualityReqIds.join(", ")} against the original.`
+                          : "Verify extracted items against the original document."}
+                      </span>
+                      <span className="inline-flex flex-wrap items-center gap-2">
+                        {lowQualityPages.map((p) => (
+                          <a
+                            key={p}
+                            href={`${API_BASE}/api/tenders/${detail.tender.id}/pdf#page=${p}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-0.5 rounded-[4px] px-1.5 py-0.5 font-mono text-xs font-medium text-[var(--tm-accent)] transition-colors duration-150 hover:bg-[var(--tm-accent-soft)]"
+                          >
+                            <span>View p.{p}</span>
+                            <ArrowUpRightIcon className="h-3.5 w-3.5" />
+                          </a>
+                        ))}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Requirements Table */}
+                  {detail.extraction && detail.assessment && (
+                    <RequirementTable
+                      tenderId={detail.tender.id}
+                      requirements={detail.extraction.requirements}
+                      assessment={detail.assessment}
+                      lowQualityPages={lowQualityPages}
+                      defaultAttester={defaultAttester}
+                      onResolved={handleResolved}
+                    />
+                  )}
+                </>
+              ) : (
+                <div className="tm-card p-10 text-center space-y-4">
+                  <p className="text-sm text-[var(--tm-text-muted)]">
+                    No tender selected
+                  </p>
                   <button
                     type="button"
                     onClick={handleStartNewUpload}
-                    className="inline-flex items-center justify-center rounded-lg border border-[#D0D5DD] bg-white px-3.5 py-2 text-[13px] font-semibold text-[#344054] transition-colors hover:bg-[#F9FAFB]"
+                    className="inline-flex h-9 items-center justify-center rounded-[8px] bg-[var(--tm-btn-primary-bg)] px-4 text-[13px] font-medium text-[var(--tm-btn-primary-text)] transition-[color,background-color,transform] duration-150 hover:bg-[var(--tm-btn-primary-hover)] active:scale-[0.98]"
                   >
-                    Upload new tender
+                    Upload a tender PDF
                   </button>
-
-                  <a
-                    href={`${API_BASE}/api/tenders/${detail.tender.id}/pdf`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#D0D5DD] bg-white px-3.5 py-2 text-[13px] font-semibold text-[#344054] transition-colors hover:bg-[#F9FAFB]"
-                  >
-                    <span>Source PDF</span>
-                    <ArrowUpRightIcon className="h-3.5 w-3.5 text-[#667085]" />
-                  </a>
-
-                  {detail.tender.status === "completed" && (
-                    <a
-                      href={`${API_BASE}/api/tenders/${detail.tender.id}/report.pdf`}
-                      className="inline-flex items-center justify-center rounded-lg bg-[#2457D6] px-3.5 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#1D46B0]"
-                    >
-                      Export PDF report
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              {/* Processing State */}
-              {detail.tender.status === "processing" && (
-                <div
-                  aria-live="polite"
-                  className="tm-card p-6 space-y-3"
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <h2 className="text-[14px] font-semibold text-[#101828]">
-                      Analysing tender PDF
-                    </h2>
-                    <span className="inline-flex items-center rounded-md bg-[#EFF4FF] px-2 py-0.5 text-[12px] font-semibold text-[#1D4ED8]">
-                      Processing
-                    </span>
-                  </div>
-                  <div
-                    className="h-2 w-full overflow-hidden rounded-full bg-[#E4E7EC]"
-                    role="progressbar"
-                    aria-label="Analysing tender PDF"
-                  >
-                    <div className="h-full w-1/3 rounded-full bg-[#2457D6] tm-progress-indeterminate" />
-                  </div>
-                  <p className="text-[13px] text-[#667085]">
-                    Reading pages and extracting requirements… This page updates
-                    automatically every 2 seconds.
-                  </p>
                 </div>
               )}
-
-              {/* Failed State */}
-              {detail.tender.status === "failed" && (
-                <div
-                  role="alert"
-                  className="rounded-xl border border-[#FDA29B] bg-[#FEF3F2] p-5 space-y-2 text-[#912018]"
-                >
-                  <h2 className="text-[14px] font-semibold">Analysis failed</h2>
-                  <p className="text-[13px] break-words">
-                    {detail.tender.error ||
-                      "Extraction failed. Please upload a clearer PDF."}
-                  </p>
-                  <div className="pt-1">
-                    <button
-                      type="button"
-                      onClick={handleStartNewUpload}
-                      className="rounded-lg border border-[#FDA29B] bg-white px-3 py-1.5 text-[12.5px] font-semibold text-[#912018] hover:bg-[#FEF3F2]"
-                    >
-                      Upload another PDF
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* Summary Panel */}
-              {detail.assessment && (
-                <SummaryPanel assessment={detail.assessment} />
-              )}
-
-              {/* Low-Quality / OCR Pages Amber Banner */}
-              {lowQualityPages.length > 0 && (
-                <div
-                  role="note"
-                  className="rounded-xl border border-[#FDE68A] bg-[#FEF9E7] px-4 py-3 text-[13px] text-[#7A2E0E] flex flex-wrap items-center gap-x-2 gap-y-1"
-                >
-                  <span>
-                    {lowQualityPages.length === 1
-                      ? `Page ${lowQualityPages[0]} is a scanned image, read with OCR.`
-                      : `Pages ${lowQualityPages.join(", ")} are scanned images, read with OCR.`}{" "}
-                    {lowQualityReqIds.length > 0
-                      ? `Check ${lowQualityReqIds.join(", ")} against the original.`
-                      : "Verify extracted items against the original document."}
-                  </span>
-                  <span className="inline-flex flex-wrap items-center gap-2">
-                    {lowQualityPages.map((p) => (
-                      <a
-                        key={p}
-                        href={`${API_BASE}/api/tenders/${detail.tender.id}/pdf#page=${p}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-0.5 font-semibold text-[#2457D6] hover:underline"
-                      >
-                        <span>View page {p}</span>
-                        <ArrowUpRightIcon className="h-3.5 w-3.5" />
-                      </a>
-                    ))}
-                  </span>
-                </div>
-              )}
-
-              {/* Requirements Table */}
-              {detail.extraction && detail.assessment && (
-                <RequirementTable
-                  tenderId={detail.tender.id}
-                  requirements={detail.extraction.requirements}
-                  assessment={detail.assessment}
-                  lowQualityPages={lowQualityPages}
-                  defaultAttester={defaultAttester}
-                  onResolved={handleResolved}
-                />
-              )}
-            </>
-          ) : (
-            <div className="tm-card p-8 text-center space-y-3">
-              <p className="text-[13.5px] text-[#667085]">
-                No tender selected.
-              </p>
-              <button
-                type="button"
-                onClick={handleStartNewUpload}
-                className="rounded-lg bg-[#2457D6] px-4 py-2 text-[13px] font-semibold text-white hover:bg-[#1D46B0]"
-              >
-                Upload a tender PDF
-              </button>
             </div>
           )}
-        </div>
-      )}
         </>
       )}
     </AppShell>
