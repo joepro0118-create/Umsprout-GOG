@@ -1,12 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+:root {
+  --color-ink: #101828;
+  --color-muted: #667085;
+  --color-border: #E4E7EC;
+  --color-bg: #F6F7F9;
+  --color-surface: #FFFFFF;
+  --color-sidebar: #0B1B33;
+  --color-sidebar-text: #B8C4D9;
+  --color-sidebar-active: #1B3157;
+  --color-primary: #2457D6;
+  --color-primary-hover: #1D46B0;
+
+  --color-gap-bg: #C0261A;
+  --color-review-bg: #FEF0C7;
+  --color-review-text: #7A2E0E;
+  --color-rule-bg: #E7F6EC;
+  --color-rule-text: #05603A;
+  --color-evidenced-bg: #EFF4FF;
+  --color-evidenced-text: #1D4ED8;
+  --color-tierb-bg: #FEE4E2;
+  --color-tierb-text: #912018;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.tm-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+/* Visible accessible focus rings */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Indeterminate progress bar for processing tenders */
+@keyframes tm-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.tm-progress-indeterminate {
+  animation: tm-indeterminate 1.6s ease-in-out infinite;
 }

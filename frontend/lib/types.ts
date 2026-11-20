@@ -15,8 +15,8 @@ export const STATUS_LABELS: Record<ComplianceStatus, string> = {
   matched_rule_verified: "Rule-checked",
   matched_user_evidenced: "User-evidenced",
   gap: "Gap",
-  needs_review: "Needs Review",
-  not_applicable: "Not Applicable",
+  needs_review: "Needs review",
+  not_applicable: "Not applicable",
 };
 
 export interface CompanyDocument {
@@ -29,6 +29,12 @@ export interface CompanyDocument {
   valid_until: string | null;
   user_confirmed: boolean;
   notes?: string | null;
+}
+
+export interface StatusFlagRecord {
+  value: boolean | null;
+  evidence_document_id: string | null;
+  user_confirmed: boolean;
 }
 
 export interface CompanyProfile {
@@ -63,6 +69,7 @@ export interface CompanyProfile {
     evidence_document_id: string | null;
     user_confirmed: boolean;
   } | null;
+  status_flags?: Record<string, StatusFlagRecord>;
   financials: {
     paid_up_capital_rm: number | null;
     net_worth_rm: number | null;
@@ -196,4 +203,85 @@ export function formatDateTime(iso: string | null | undefined): string {
     hour: "2-digit",
     minute: "2-digit",
   });
+}
+
+export function formatDateShort(iso: string | null | undefined): string {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+export function formatFileSize(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+export function formatCategory(category: string): string {
+  const labels: Record<string, string> = {
+    cidb_registration: "CIDB registration",
+    mof_registration: "MOF registration",
+    bumiputera_status: "Bumiputera status",
+    site_briefing: "Site briefing",
+    performance_bond: "Performance bond",
+    mandatory_documents: "Mandatory documents",
+    financial_technical_experience: "Financial",
+    submission_instructions: "Submission",
+    other: "Other",
+  };
+  return labels[category] || category.replaceAll("_", " ");
+}
+
+export function formatDocumentType(docType: string): string {
+  const labels: Record<string, string> = {
+    cidb_certificate: "CIDB certificate",
+    mof_certificate: "MOF certificate",
+    bumiputera_certificate: "Bumiputera",
+    ssm_certificate: "SSM",
+    ssm_registration: "SSM",
+    paid_up_capital: "Paid-up capital",
+    financial_statement: "Paid-up capital",
+  };
+  return labels[docType] || docType.replaceAll("_", " ");
+}
+
+export function formatLanguages(requirements: ExtractedRequirement[]): string {
+  if (!requirements.length) return "Unknown language";
+  const langs = new Set(requirements.map((r) => r.language));
+  const hasMs = langs.has("ms") || langs.has("mixed");
+  const hasEn = langs.has("en") || langs.has("mixed");
+  if (hasMs && hasEn) return "Bahasa Malaysia and English";
+  if (hasMs) return "Bahasa Malaysia";
+  if (hasEn) return "English";
+  return Array.from(langs).join(", ");
+}
+
+/**
+ * Safely parse an API error response without throwing on plain-text 500s.
+ */
+export async function extractErrorMessage(
+  resp: Response,
+  fallback: string
+): Promise<string> {
+  try {
+    const contentType = resp.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      const data = (await resp.json()) as { detail?: unknown };
+      if (typeof data?.detail === "string" && data.detail.trim()) {
+        return data.detail;
+      }
+    }
+    const text = (await resp.text()).trim();
+    if (text) {
+      return `Server error (${resp.status}): ${text.slice(0, 240)}`;
+    }
+  } catch {
+    // Ignore secondary parsing error
+  }
+  return `${fallback} (HTTP ${resp.status})`;
 }

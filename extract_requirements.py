@@ -155,7 +155,7 @@ def _generate_content_with_fallback(
     contents: Any,
     config: Optional[types.GenerateContentConfig] = None,
 ) -> tuple[Any, str]:
-    """Call Gemini generate_content with transient retry and fallback on 404/500/503/504/network errors."""
+    """Call Gemini generate_content with transient retry and fallback on 404/429/500/503/504/network errors."""
     candidate_models = [model_name] + [m for m in FALLBACK_MODELS if m != model_name]
     last_error: Optional[Exception] = None
 
@@ -169,7 +169,7 @@ def _generate_content_with_fallback(
             return response, candidate
         except genai_errors.APIError as exc:
             last_error = exc
-            if exc.code not in (404, 500, 503, 504):
+            if exc.code not in (404, 429, 500, 503, 504):
                 raise
         except OSError as exc:
             last_error = exc
@@ -189,6 +189,7 @@ def _ocr_with_gemini_vision(
     page: pymupdf.Page,
     client: genai.Client,
     model_name: str,
+    used_models_out: Optional[list[str]] = None,
 ) -> tuple[str, bool, Optional[str]]:
     """Use Gemini Vision as OCR fallback for scanned PDF pages."""
     pix = page.get_pixmap(dpi=200)
@@ -214,6 +215,8 @@ def _ocr_with_gemini_vision(
             automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
         ),
     )
+    if used_models_out is not None:
+        used_models_out.append(used_model)
     text = (response.text or "").strip()
     has_illegible = "[ILLEGIBLE]" in text or "[UNREADABLE_PAGE]" in text
     note = f"Gemini Vision OCR fallback applied ({used_model})"
@@ -227,6 +230,7 @@ def extract_pdf_pages(
     client: Optional[genai.Client] = None,
     model_name: str = DEFAULT_MODEL,
     allow_llm_ocr: bool = True,
+    used_models_out: Optional[list[str]] = None,
 ) -> tuple[list[PageExtractionInfo], dict[int, str], list[int]]:
     """Extract page-by-page text from a PDF with OCR fallback and quality flags."""
     if not pdf_path.exists():
@@ -268,7 +272,9 @@ def extract_pdf_pages(
                     quality_notes = tess_note
                 elif client is not None and allow_llm_ocr:
                     try:
-                        gem_text, gem_clean, gem_note = _ocr_with_gemini_vision(page, client, model_name)
+                        gem_text, gem_clean, gem_note = _ocr_with_gemini_vision(
+                            page, client, model_name, used_models_out=used_models_out
+                        )
                         extraction_method = "ocr_gemini_vision"
                         final_text = gem_text
                         quality_notes = gem_note
@@ -366,6 +372,7 @@ def run_initial_extraction_pass(
     client: genai.Client,
     model_name: str,
     labelled_document: str,
+    used_models_out: Optional[list[str]] = None,
 ) -> list[dict[str, Any]]:
     """Pass 1: Extract all explicit mandatory, conditional, and key informational requirements."""
     prompt = (
@@ -379,7 +386,9 @@ def run_initial_extraction_pass(
         "site briefings, mandatory forms/declarations).\n\n"
         f"{labelled_document}"
     )
-    items, _ = _call_gemini_structured_extraction(client, model_name, prompt)
+    items, used_model = _call_gemini_structured_extraction(client, model_name, prompt)
+    if used_models_out is not None:
+        used_models_out.append(used_model)
     for item in items:
         item["extraction_pass"] = "initial"
     return items
@@ -390,6 +399,7 @@ def run_coverage_pass(
     model_name: str,
     labelled_document: str,
     initial_items: list[dict[str, Any]],
+    used_models_out: Optional[list[str]] = None,
 ) -> list[dict[str, Any]]:
     """Pass 2: Audit document against Pass 1 output to catch omitted or unsplit conditions."""
     compact_existing = [
@@ -416,7 +426,9 @@ def run_coverage_pass(
         "If nothing was missed, return {\"requirements\": []}.\n\n"
         f"{labelled_document}"
     )
-    items, _ = _call_gemini_structured_extraction(client, model_name, prompt)
+    items, used_model = _call_gemini_structured_extraction(client, model_name, prompt)
+    if used_models_out is not None:
+        used_models_out.append(used_model)
     for item in items:
         item["extraction_pass"] = "coverage"
     return items
@@ -794,11 +806,13 @@ def extract_tender_requirements(
             ),
         )
 
+    used_models: list[str] = []
     pages_info, pages_text_map, low_quality_pages = extract_pdf_pages(
         pdf_path=pdf_path,
         client=client,
         model_name=model_name,
         allow_llm_ocr=allow_llm_ocr and not mock_llm,
+        used_models_out=used_models,
     )
     labelled_document = format_page_labelled_document(pages_info, pages_text_map)
 
@@ -807,9 +821,14 @@ def extract_tender_requirements(
         effective_model = "mock-llm-offline"
     else:
         assert client is not None
-        initial_raw = run_initial_extraction_pass(client, model_name, labelled_document)
-        coverage_raw = run_coverage_pass(client, model_name, labelled_document, initial_raw)
-        effective_model = model_name
+        initial_raw = run_initial_extraction_pass(
+            client, model_name, labelled_document, used_models_out=used_models
+        )
+        coverage_raw = run_coverage_pass(
+            client, model_name, labelled_document, initial_raw, used_models_out=used_models
+        )
+        unique_models = list(dict.fromkeys(used_models))
+        effective_model = ", ".join(unique_models) if unique_models else model_name
 
     combined_raw = initial_raw + coverage_raw
     validated_requirements = validate_and_enrich_requirements(
